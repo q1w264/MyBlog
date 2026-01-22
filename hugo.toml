@@ -1,4 +1,19 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://www.q1w264.com'
+languageCode = 'zh-cn'
+title = 'q1w264的个人博客'
 theme = "mainroad"
+copyright = "q1w264"
+[[menu.main]]
+name = "Home"
+url = "/posts"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 2
+[params]
+# Site author
+author = "q1w264"
+# homepage 页描述信息
+description = "未知"
