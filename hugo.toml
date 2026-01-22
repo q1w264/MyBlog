@@ -3,6 +3,7 @@ languageCode = 'zh-cn'
 title = 'q1w264的个人博客'
 theme = "mainroad"
 copyright = "q1w264"
+googleAnalytics = "GTM-NGXBTRHX"
 [[menu.main]]
 name = "Home"
 url = "/posts"
