@@ -1,20 +1,37 @@
 baseURL = 'https://www.q1w264.com'
 languageCode = 'zh-cn'
-title = 'q1w264的个人博客'
+title = "q1w264's personal blog"
 theme = "mainroad"
 copyright = "q1w264"
 googleAnalytics = "G-QP462JDKRZ"
-[[menu.main]]
-name = "Home"
-url = "/posts"
-weight = 1
 
-[[menu.main]]
-name = "About"
-url = "/about/"
-weight = 2
-[params]
-# Site author
-author = "q1w264"
-# homepage 页描述信息
-description = "未知"
+[Author] # Used in authorbox
+  name = "q1w264"
+  bio = "知识就是力量"
+  avatar = "images/icon.png"
+
+[Params]
+  post_meta = ["date", "categories", "translations"]
+
+[Params.logo]
+  title = "q1w264的个人博客"
+  subtitle = "吾生也有涯，而知也无涯" # Logo subtitle
+
+[Params.sidebar]
+  home = "right" # Configure layout for home page
+  list = "left"  # Configure layout for list pages
+  single = false # Configure layout for single pages
+  # Enable widgets in given order
+  widgets = ["social", "categories", "taglist"]
+
+[Params.widgets]
+  recent_num = 5 # Set the number of articles in the "Recent articles" widget
+  categories_counter = false # Enable counter for each category in "Categories" widget
+  tags_counter = false # Enable counter for each tag in "Tags" widget
+
+[Params.widgets.social]
+  cached = true # activate cache if true
+  # Enable parts of social widget
+  github = "q1w264"
+  email = "q1w264@outlook.com"
+  
