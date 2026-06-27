@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>q1w264&#39;s Blog</title>
+		<link>http://localhost:1313/en/</link>
+		<description>Recent content on q1w264&#39;s Blog</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+		
+			<atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>About</title>
+				<link>http://localhost:1313/en/about/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/about/</guid>
+				<description>&lt;h1 id=&#34;-hi-there-im-your-name--alias&#34;&gt;👋 Hi there, I&amp;rsquo;m [Your Name / Alias]!&lt;/h1&gt;&#xA;&lt;p&gt;Welcome to my digital garden 🌿. This is where I share my thoughts, document my technical journey, and archive bits of my life.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-about-me&#34;&gt;🚀 About Me&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Role&lt;/strong&gt;: [e.g., Full-Stack Engineer / Indie Hacker / Digital Nomad]&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Focus Areas&lt;/strong&gt;: [e.g., Web Architecture, AI Integration, UX Design]&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Location&lt;/strong&gt;: 📍 [e.g., Beijing, China]&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Currently, I&amp;rsquo;m deeply focused on &lt;strong&gt;[e.g., exploring LLM applications in workflows / building SaaS products]&lt;/strong&gt;. I love solving real-world problems with code and strongly believe in the &amp;ldquo;Less is more&amp;rdquo; philosophy.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

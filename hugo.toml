@@ -1,37 +1,72 @@
-baseURL = 'https://www.q1w264.com'
-languageCode = 'zh-cn'
-title = "q1w264's personal blog"
-theme = "mainroad"
-copyright = "q1w264"
-googleAnalytics = "G-QP462JDKRZ"
+baseURL = "https://www.q1w264.com/"
+theme = "hugo-primer-blog"
+title = "q1w264's Blog"
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
+[params]
+dateFormat = "2006-01-02" 
+defaultTheme = "auto" # auto, light, or dark
+googleAnalyticsID = "G-QP462JDKRZ" # Google Analytics 4 ID
+recentPostsCount = 5 # Number of recent posts in sidebar module
+showAuthor = true 
+showReadingTime = true 
+showShareButtons = true 
+sidebar = true # Enable/disable sidebar
 
 [Author] # Used in authorbox
-  name = "q1w264"
-  bio = "知识就是力量"
-  avatar = "images/icon.png"
+avatar = "images/icon.png"
+bio = "知识就是力量"
+name = "q1w264"
+# Sidebar modules - order determines display order
+# Available: recentPosts, tags, categories, archive, links (+ custom partials)
+[[params.sidebarModules]]
+partial = "categories"
+[[params.sidebarModules]]
+partial = "recentPosts"
 
-[Params]
-  post_meta = ["date", "categories", "translations"]
+[[params.sidebarModules]]
+partial = "tags"
 
-[Params.logo]
-  title = "q1w264的个人博客"
-  subtitle = "吾生也有涯，而知也无涯" # Logo subtitle
+[[params.sidebarModules]]
+partial = "archive"
 
-[Params.sidebar]
-  home = "right" # Configure layout for home page
-  list = "left"  # Configure layout for list pages
-  single = false # Configure layout for single pages
-  # Enable widgets in given order
-  widgets = ["social", "categories", "taglist"]
+[params.social]
+github = "q1w264"
 
-[Params.widgets]
-  recent_num = 5 # Set the number of articles in the "Recent articles" widget
-  categories_counter = false # Enable counter for each category in "Categories" widget
-  tags_counter = false # Enable counter for each tag in "Tags" widget
+# Custom favicon (optional)
+# faviconIco = "favicon.ico"
+faviconPng = "static/images/favicon.png"
 
-[Params.widgets.social]
-  cached = true # activate cache if true
-  # Enable parts of social widget
-  github = "q1w264"
-  email = "q1w264@outlook.com"
-  
+# Apple Touch Icons (optional)
+[[params.appleTouchIcons]]
+href = "static/images/apple-touch-icon-180x180.png"
+sizes = "180x180"
+[[params.appleTouchIcons]]
+href = "static/images/apple-touch-icon-152x152.png"
+sizes = "152x152"
+
+[languages]
+[languages.en]
+contentDir = "content/en"
+languageName = "English"
+weight = 1
+[languages.en.params]
+description = "A blog powered by Hugo and Primer CSS"
+
+[languages.cn]
+contentDir = "content/cn"
+languageName = "简体中文"
+weight = 2
+
+[menus]
+[[menus.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menus.main]]
+name = "About"
+url = "/about/"
+weight = 2

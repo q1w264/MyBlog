@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Example article title on q1w264&#39;s personal blog</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content in Example article title on q1w264&#39;s personal blog</description>
-    <generator>Hugo</generator>
-    <language>zh-cn</language>
-    <copyright>q1w264</copyright>
-    <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
+	<channel>
+		<title>Example article title on q1w264&#39;s personal blog</title>
+		<link>https://www.q1w264.com/</link>
+		<description>Recent content in Example article title on q1w264&#39;s personal blog</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+			<copyright>q1w264</copyright>
+		
+		
+			<lastBuildDate></lastBuildDate>
+		
+			<atom:link href="https://www.q1w264.com/index.xml" rel="self" type="application/rss+xml" />
+	</channel>
 </rss>
