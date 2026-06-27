@@ -10,8 +10,8 @@ ogp:
     last_name: Yuan
     username: q1w264
     gender: male
-outputs:
-  - HTML
+build:
+  list: "local"
 ---
 ![GitHub followers](https://img.shields.io/github/followers/q1w264)
 ![GitHub User's stars](https://img.shields.io/github/stars/q1w264)
