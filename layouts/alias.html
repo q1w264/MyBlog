@@ -1,0 +1,11 @@
+<script>
+    (function() {
+        // 获取浏览器语言并映射到 Hugo 语言子目录
+        var lang = navigator.language || navigator.userLanguage;
+        if (lang.indexOf('zh') !== -1) {
+            window.location.replace('/cn/');
+        } else {
+            window.location.replace('/en/');
+        }
+    })();
+</script>
