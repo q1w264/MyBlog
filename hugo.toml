@@ -36,15 +36,15 @@ partial = "archive"
 github = "q1w264"
 
 # Custom favicon (optional)
-# faviconIco = "favicon.ico"
-faviconPng = "static/images/favicon.png"
+faviconIco = "static/favicon.ico"
+faviconPng = "static/favicon.png"
 
 # Apple Touch Icons (optional)
 [[params.appleTouchIcons]]
-href = "static/images/apple-touch-icon-180x180.png"
+href = "static/apple-touch-icon-180x180.png"
 sizes = "180x180"
 [[params.appleTouchIcons]]
-href = "static/images/apple-touch-icon-152x152.png"
+href = "static/apple-touch-icon-152x152.png"
 sizes = "152x152"
 
 [languages]
