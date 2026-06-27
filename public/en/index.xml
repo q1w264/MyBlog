@@ -12,11 +12,11 @@
 		
 			<atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>About</title>
+				<title>Shilong Yuan (q1w264)</title>
 				<link>http://localhost:1313/en/about/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/en/about/</guid>
-				<description>&lt;h1 id=&#34;-hi-there-im-your-name--alias&#34;&gt;👋 Hi there, I&amp;rsquo;m [Your Name / Alias]!&lt;/h1&gt;&#xA;&lt;p&gt;Welcome to my digital garden 🌿. This is where I share my thoughts, document my technical journey, and archive bits of my life.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-about-me&#34;&gt;🚀 About Me&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Role&lt;/strong&gt;: [e.g., Full-Stack Engineer / Indie Hacker / Digital Nomad]&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Focus Areas&lt;/strong&gt;: [e.g., Web Architecture, AI Integration, UX Design]&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Location&lt;/strong&gt;: 📍 [e.g., Beijing, China]&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Currently, I&amp;rsquo;m deeply focused on &lt;strong&gt;[e.g., exploring LLM applications in workflows / building SaaS products]&lt;/strong&gt;. I love solving real-world problems with code and strongly believe in the &amp;ldquo;Less is more&amp;rdquo; philosophy.&lt;/p&gt;</description>
+				<description>&lt;p&gt;&lt;img src=&#34;https://img.shields.io/github/followers/q1w264&#34; alt=&#34;GitHub followers&#34; loading=&#34;lazy&#34;&gt;&#xA;&#xA;&lt;img src=&#34;https://img.shields.io/github/stars/q1w264&#34; alt=&#34;GitHub User&amp;rsquo;s stars&#34; loading=&#34;lazy&#34;&gt;&#xA;&lt;/p&gt;&#xA;&lt;h2 id=&#34;-lets-connect&#34;&gt;📫 Let&amp;rsquo;s Connect!&lt;/h2&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re interested in my projects, or just want to have a casual chat, feel free to reach out:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Email&lt;/strong&gt;: [shilong.yuan@q1w264.com]&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a href=&#34;https://github.com/q1w264&#34;&gt;@yq1w264&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
 			</item>
 	</channel>
 </rss>
