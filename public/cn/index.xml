@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>q1w264的博客</title>
+		<title>欢迎来到我的博客 on q1w264的博客</title>
 		<link>http://localhost:1313/cn/</link>
-		<description>Recent content on q1w264的博客</description>
+		<description>Recent content in 欢迎来到我的博客 on q1w264的博客</description>
 		<generator>Hugo</generator>
 		<language>cn</language>
 		
 		
+		
+			<copyright>© 2026 q1w264</copyright>
 		
 		
 			<lastBuildDate>Sat, 27 Jun 2026 00:00:00 +0000</lastBuildDate>

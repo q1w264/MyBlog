@@ -1,11 +1,12 @@
 baseURL = "https://www.q1w264.com/"
 theme = "hugo-primer-blog"
-
+copyright = '© 2026 q1w264'
 
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
 [params]
+email = "shilong.yuan@q1w264.com"
 dateFormat = "2006-01-02" 
 defaultTheme = "auto" # auto, light, or dark
 googleAnalyticsID = "G-QP462JDKRZ" # Google Analytics 4 ID
@@ -88,5 +89,10 @@ url = "/about/"
 weight = 1
 
 [outputs]
-  home = ["HTML", "RSS"]
-  page = ["HTML", "Markdown"]
+  home = ['html', 'rss']
+  section = ['html', 'rss']
+  taxonomy = ['html']
+  term = ['html']
+
+
+

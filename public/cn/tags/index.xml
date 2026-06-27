@@ -9,6 +9,8 @@
 		
 		
 		
+			<copyright>© 2026 q1w264</copyright>
+		
 		
 			<lastBuildDate>Sat, 27 Jun 2026 00:00:00 +0000</lastBuildDate>
 		
@@ -25,27 +27,6 @@
 				<link>http://localhost:1313/cn/tags/static-site/</link>
 				<pubDate>Sat, 27 Jun 2026 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/cn/tags/static-site/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Jamstack</title>
-				<link>http://localhost:1313/cn/tags/jamstack/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/cn/tags/jamstack/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Ssg</title>
-				<link>http://localhost:1313/cn/tags/ssg/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/cn/tags/ssg/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>静态网站</title>
-				<link>http://localhost:1313/cn/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/cn/tags/%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/</guid>
 				<description></description>
 			</item>
 	</channel>

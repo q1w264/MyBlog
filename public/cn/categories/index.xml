@@ -9,6 +9,8 @@
 		
 		
 		
+			<copyright>© 2026 q1w264</copyright>
+		
 		
 			<lastBuildDate>Sat, 27 Jun 2026 00:00:00 +0000</lastBuildDate>
 		
@@ -18,13 +20,6 @@
 				<link>http://localhost:1313/cn/categories/tutorial/</link>
 				<pubDate>Sat, 27 Jun 2026 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/cn/categories/tutorial/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>教程</title>
-				<link>http://localhost:1313/cn/categories/%E6%95%99%E7%A8%8B/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/cn/categories/%E6%95%99%E7%A8%8B/</guid>
 				<description></description>
 			</item>
 	</channel>

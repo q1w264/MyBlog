@@ -54,19 +54,6 @@
                 href="http://localhost:1313/cn/posts/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/</loc>
-    <lastmod>2026-06-27T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="http://localhost:1313/cn/"
-                />
-  </url><url>
     <loc>http://localhost:1313/en/tags/static-site/</loc>
     <lastmod>2026-06-27T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -106,16 +93,17 @@
                 href="http://localhost:1313/cn/categories/tutorial/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/jamstack/</loc>
+    <loc>http://localhost:1313/en/</loc>
+    <lastmod>2026-06-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/en/tags/jamstack/"
+                href="http://localhost:1313/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="cn"
-                href="http://localhost:1313/cn/tags/jamstack/"
+                href="http://localhost:1313/cn/"
                 />
   </url><url>
     <loc>http://localhost:1313/en/about/</loc>
@@ -128,18 +116,6 @@
                 rel="alternate"
                 hreflang="cn"
                 href="http://localhost:1313/cn/about/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/en/tags/ssg/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/en/tags/ssg/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="http://localhost:1313/cn/tags/ssg/"
                 />
   </url>
 </urlset>

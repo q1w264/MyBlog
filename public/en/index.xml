@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>q1w264&#39;s Blog</title>
+		<title>Welcome to My Blog on q1w264&#39;s Blog</title>
 		<link>http://localhost:1313/en/</link>
-		<description>Recent content on q1w264&#39;s Blog</description>
+		<description>Recent content in Welcome to My Blog on q1w264&#39;s Blog</description>
 		<generator>Hugo</generator>
 		<language>en</language>
 		
 		
+		
+			<copyright>© 2026 q1w264</copyright>
 		
 		
 			<lastBuildDate>Sat, 27 Jun 2026 00:00:00 +0000</lastBuildDate>
@@ -25,7 +27,7 @@
 				<link>http://localhost:1313/en/about/</link>
 				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/en/about/</guid>
-				<description>&lt;p&gt;&lt;img src=&#34;https://img.shields.io/github/followers/q1w264&#34; alt=&#34;GitHub followers&#34; loading=&#34;lazy&#34;&gt;&#xA;&#xA;&lt;img src=&#34;https://img.shields.io/github/stars/q1w264&#34; alt=&#34;GitHub User&amp;rsquo;s stars&#34; loading=&#34;lazy&#34;&gt;&#xA;&lt;/p&gt;&#xA;&lt;h2 id=&#34;-lets-connect&#34;&gt;📫 Let&amp;rsquo;s Connect!&lt;/h2&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re interested in my projects, or just want to have a casual chat, feel free to reach out:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Email&lt;/strong&gt;: [shilong.yuan@q1w264.com]&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a href=&#34;https://github.com/q1w264&#34;&gt;@q1w264&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+				<description>&lt;p&gt;&lt;img src=&#34;https://img.shields.io/github/followers/q1w264&#34; alt=&#34;GitHub followers&#34; loading=&#34;lazy&#34;&gt;&#xA;&#xA;&lt;img src=&#34;https://img.shields.io/github/stars/q1w264&#34; alt=&#34;GitHub User&amp;rsquo;s stars&#34; loading=&#34;lazy&#34;&gt;&#xA;&lt;/p&gt;&#xA;&lt;h2 id=&#34;-lets-connect&#34;&gt;📫 Let&amp;rsquo;s Connect!&lt;/h2&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re interested in my projects, or just want to have a casual chat, feel free to reach out:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Email&lt;/strong&gt;: &lt;a href=&#34;mailto:shilong.yuan@q1w264.com&#34;&gt;shilong.yuan@q1w264.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a href=&#34;https://github.com/q1w264&#34;&gt;@q1w264&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
 			</item>
 	</channel>
 </rss>

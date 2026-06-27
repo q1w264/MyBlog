@@ -3,6 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/cn/categories/</loc>
+    <lastmod>2026-06-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -14,7 +15,47 @@
                 href="http://localhost:1313/cn/categories/"
                 />
   </url><url>
+    <loc>http://localhost:1313/cn/tags/hugo/</loc>
+    <lastmod>2026-06-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/tags/hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/tags/hugo/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/cn/posts/getting-started-with-hugo/</loc>
+    <lastmod>2026-06-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/posts/getting-started-with-hugo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/posts/getting-started-with-hugo/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/cn/posts/</loc>
+    <lastmod>2026-06-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/posts/"
+                />
+  </url><url>
     <loc>http://localhost:1313/cn/</loc>
+    <lastmod>2026-06-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -26,7 +67,21 @@
                 href="http://localhost:1313/cn/"
                 />
   </url><url>
+    <loc>http://localhost:1313/cn/tags/static-site/</loc>
+    <lastmod>2026-06-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/tags/static-site/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/tags/static-site/"
+                />
+  </url><url>
     <loc>http://localhost:1313/cn/tags/</loc>
+    <lastmod>2026-06-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -36,6 +91,19 @@
                 rel="alternate"
                 hreflang="cn"
                 href="http://localhost:1313/cn/tags/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/cn/categories/tutorial/</loc>
+    <lastmod>2026-06-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/en/categories/tutorial/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="http://localhost:1313/cn/categories/tutorial/"
                 />
   </url><url>
     <loc>http://localhost:1313/cn/about/</loc>
