@@ -31,7 +31,7 @@
 	{{- $pages = $pages | first $limit }}
 {{- end }}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 	<channel>
 		<title>{{ if eq .Title .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ .Site.Title }}{{ end }}</title>
 		<link>{{ .Permalink }}</link>
@@ -41,6 +41,8 @@
             <title>{{ $.Site.Title }}</title>
             <link>{{ $.Permalink }}</link>
         </image>
+		<itunes:image href="{{ . | absURL }}" />
+        <logo>{{ . | absURL }}</logo>
         {{ end }}
 		<description>Recent content {{ if ne .Title .Site.Title }}{{ with .Title }}in {{ . }} {{ end }}{{ end }}on {{ .Site.Title }}</description>
 		<generator>Hugo</generator>

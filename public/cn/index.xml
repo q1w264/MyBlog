@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 	<channel>
 		<title>q1w264的博客</title>
 		<link>http://localhost:1313/cn/</link>
         
          <image>
-            <url>http://localhost:1313/static/images/icon.png</url>
+            <url>http://localhost:1313/static/images/logo.png</url>
             <title>q1w264的博客</title>
             <link>http://localhost:1313/cn/</link>
         </image>
+		<itunes:image href="http://localhost:1313/static/images/logo.png" />
+        <logo>http://localhost:1313/static/images/logo.png</logo>
         
 		<description>Recent content on q1w264的博客</description>
 		<generator>Hugo</generator>
