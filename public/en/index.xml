@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Welcome to My Blog on q1w264&#39;s Blog</title>
+		<title>q1w264&#39;s Blog</title>
 		<link>http://localhost:1313/en/</link>
-		<description>Recent content in Welcome to My Blog on q1w264&#39;s Blog</description>
+        
+         <image>
+            <url>http://localhost:1313/static/images/icon.png</url>
+            <title>q1w264&#39;s Blog</title>
+            <link>http://localhost:1313/en/</link>
+        </image>
+        
+		<description>Recent content on q1w264&#39;s Blog</description>
 		<generator>Hugo</generator>
 		<language>en</language>
 		

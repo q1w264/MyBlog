@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>欢迎来到我的博客 on q1w264的博客</title>
+		<title>q1w264的博客</title>
 		<link>http://localhost:1313/cn/</link>
-		<description>Recent content in 欢迎来到我的博客 on q1w264的博客</description>
+        
+         <image>
+            <url>http://localhost:1313/static/images/icon.png</url>
+            <title>q1w264的博客</title>
+            <link>http://localhost:1313/cn/</link>
+        </image>
+        
+		<description>Recent content on q1w264的博客</description>
 		<generator>Hugo</generator>
 		<language>cn</language>
 		

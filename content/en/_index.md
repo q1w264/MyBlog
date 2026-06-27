@@ -1,4 +1,4 @@
 ---
-title: "Welcome to My Blog"
+title: ""
 description: "Sharing thoughts on technology and life."
 ---

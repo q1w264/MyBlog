@@ -15,9 +15,9 @@ showAuthor = true
 showReadingTime = true 
 showShareButtons = true 
 sidebar = true # Enable/disable sidebar
+avatar = "static/images/icon.png"
 
 [Author] # Used in authorbox
-avatar = "images/icon.png"
 bio = "知识就是力量"
 name = "q1w264"
 # Sidebar modules - order determines display order
