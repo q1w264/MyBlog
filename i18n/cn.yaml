@@ -1,0 +1,54 @@
+# Navigation
+mainNavigation: "主导航"
+footerNavigation: "页脚导航"
+selectLanguage: "选择语言"
+
+# Theme
+toggleTheme: "切换主题"
+themeLight: "浅色主题"
+themeDark: "深色主题"
+themeAuto: "系统主题"
+
+# Content
+latestPosts: "最新文章"
+recentPosts: "近期文章"
+relatedPosts: "相关文章"
+noPosts: "未找到文章。"
+
+# Taxonomy
+tags: "标签"
+categories: "分类"
+archive: "归档"
+links: "链接"
+
+# Reading
+minRead: "分钟阅读"
+
+# Share
+share: "分享"
+
+# Pagination
+pagination: "分页"
+previous: "上一页"
+next: "下一页"
+previousPage: "上一页"
+nextPage: "下一页"
+page: "页"
+
+# 404
+pageNotFound: "您查找的页面不存在。"
+backToHome: "返回首页"
+
+# Sidebar Custom Modules
+aboutMe: "关于我"
+authorRole: "开发者 & 学生"
+authorBio: "欢迎来到我的博客！"
+followMe: "关注我"
+
+# Sidebar
+showMore: "显示更多"
+showLess: "显示更少"
+viewAll: "查看全部"
+
+# Footer
+poweredBy: "Powered by"
