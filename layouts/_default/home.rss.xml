@@ -53,6 +53,7 @@
         </image>
         <itunes:image href="{{ . }}" />
         <logo>{{ . }}</logo>
+        <icon>{{ . }}</icon> 
         {{ end }}
 		<description>Recent content {{ if ne .Title .Site.Title }}{{ with .Title }}in {{ . }} {{ end }}{{ end }}on {{ .Site.Title }}</description>
 		<generator>Hugo</generator>

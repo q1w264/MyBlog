@@ -19,6 +19,7 @@
         </image>
         <itunes:image href="http://localhost:1313/images/logo.png" />
         <logo>http://localhost:1313/images/logo.png</logo>
+        <icon>http://localhost:1313/images/logo.png</icon> 
         
 		<description>Recent content on q1w264&#39;s Blog</description>
 		<generator>Hugo</generator>
