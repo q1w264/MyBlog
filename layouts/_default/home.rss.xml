@@ -35,14 +35,24 @@
 	<channel>
 		<title>{{ if eq .Title .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ .Site.Title }}{{ end }}</title>
 		<link>{{ .Permalink }}</link>
+        {{ $logo := "" }}
         {{ with .Site.Params.avatar }}
-         <image>
-            <url>{{ . | absURL }}</url>
+            {{ $resourcesLogo := resources.Get . }}
+            {{ if $resourcesLogo }}
+                {{ $logo = $resourcesLogo.Permalink }}
+            {{ else }}
+                {{ $logo = urls.JoinPath $.Site.BaseURL . }}
+            {{ end }}
+        {{ end }}
+
+        {{ with $logo }}
+        <image>
+            <url>{{ . }}</url>
             <title>{{ $.Site.Title }}</title>
             <link>{{ $.Permalink }}</link>
         </image>
-		<itunes:image href="{{ . | absURL }}" />
-        <logo>{{ . | absURL }}</logo>
+        <itunes:image href="{{ . }}" />
+        <logo>{{ . }}</logo>
         {{ end }}
 		<description>Recent content {{ if ne .Title .Site.Title }}{{ with .Title }}in {{ . }} {{ end }}{{ end }}on {{ .Site.Title }}</description>
 		<generator>Hugo</generator>

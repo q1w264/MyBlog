@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 	<channel>
 		<title>q1w264&#39;s Blog</title>
 		<link>http://localhost:1313/en/</link>
         
-         <image>
-            <url>http://localhost:1313/static/images/logo.png</url>
+        
+            
+            
+                
+            
+        
+
+        
+        <image>
+            <url>http://localhost:1313/images/logo.png</url>
             <title>q1w264&#39;s Blog</title>
             <link>http://localhost:1313/en/</link>
         </image>
+        <itunes:image href="http://localhost:1313/images/logo.png" />
+        <logo>http://localhost:1313/images/logo.png</logo>
         
 		<description>Recent content on q1w264&#39;s Blog</description>
 		<generator>Hugo</generator>
@@ -28,13 +38,6 @@
 				<pubDate>Sat, 27 Jun 2026 00:00:00 +0000</pubDate>
 				<guid>http://localhost:1313/en/posts/getting-started-with-hugo/</guid>
 				<description>&lt;p&gt;Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.&lt;/p&gt;&#xA;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&#xA;&lt;p&gt;Installing Hugo is straightforward. On macOS, you can use Homebrew:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install hugo&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;On Windows, you can use Chocolatey:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;choco install hugo-extended&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;creating-a-new-site&#34;&gt;Creating a New Site&lt;/h2&gt;&#xA;&lt;p&gt;Once Hugo is installed, creating a new site is simple:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new site my-blog&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd my-blog&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;adding-content&#34;&gt;Adding Content&lt;/h2&gt;&#xA;&lt;p&gt;Create your first post:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new posts/my-first-post.md&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;running-the-development-server&#34;&gt;Running the Development Server&lt;/h2&gt;&#xA;&lt;p&gt;Start the development server with:&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Shilong Yuan (q1w264)</title>
-				<link>http://localhost:1313/en/about/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/en/about/</guid>
-				<description>&lt;p&gt;&lt;img src=&#34;https://img.shields.io/github/followers/q1w264&#34; alt=&#34;GitHub followers&#34; loading=&#34;lazy&#34;&gt;&#xA;&#xA;&lt;img src=&#34;https://img.shields.io/github/stars/q1w264&#34; alt=&#34;GitHub User&amp;rsquo;s stars&#34; loading=&#34;lazy&#34;&gt;&#xA;&lt;/p&gt;&#xA;&lt;h2 id=&#34;-lets-connect&#34;&gt;📫 Let&amp;rsquo;s Connect!&lt;/h2&gt;&#xA;&lt;p&gt;If you&amp;rsquo;re interested in my projects, or just want to have a casual chat, feel free to reach out:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Email&lt;/strong&gt;: &lt;a href=&#34;mailto:shilong.yuan@q1w264.com&#34;&gt;shilong.yuan@q1w264.com&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a href=&#34;https://github.com/q1w264&#34;&gt;@q1w264&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
 			</item>
 	</channel>
 </rss>

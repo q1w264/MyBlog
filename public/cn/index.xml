@@ -4,13 +4,21 @@
 		<title>q1w264的博客</title>
 		<link>http://localhost:1313/cn/</link>
         
-         <image>
-            <url>http://localhost:1313/static/images/logo.png</url>
+        
+            
+            
+                
+            
+        
+
+        
+        <image>
+            <url>http://localhost:1313/images/logo.png</url>
             <title>q1w264的博客</title>
             <link>http://localhost:1313/cn/</link>
         </image>
-		<itunes:image href="http://localhost:1313/static/images/logo.png" />
-        <logo>http://localhost:1313/static/images/logo.png</logo>
+        <itunes:image href="http://localhost:1313/images/logo.png" />
+        <logo>http://localhost:1313/images/logo.png</logo>
         
 		<description>Recent content on q1w264的博客</description>
 		<generator>Hugo</generator>

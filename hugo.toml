@@ -15,7 +15,7 @@ showAuthor = true
 showReadingTime = true 
 showShareButtons = true 
 sidebar = true # Enable/disable sidebar
-avatar = "static/images/logo.png"
+avatar = "images/logo.png"
 
 [Author] # Used in authorbox
 bio = "知识就是力量"
