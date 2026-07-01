@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="cn" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>GitHub Flavored Markdown Demo | q1w264的博客</title><meta name="description" content="A comprehensive demonstration of GitHub Flavored Markdown features and syntax highlighting."><meta property="og:title" content="GitHub Flavored Markdown Demo"><meta property="og:description" content="A comprehensive demonstration of GitHub Flavored Markdown features and syntax highlighting."><meta property="og:type" content="article"><meta property="og:url" content="http://localhost:1313/cn/posts/gfm-demo/"><meta property="og:image" content="http://localhost:1313/cn/posts/gfm-demo/featured.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630"><meta property="og:site_name" content="q1w264的博客"><meta property="og:locale" content="cn">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GitHub Flavored Markdown Demo">
+<meta name="twitter:description" content="A comprehensive demonstration of GitHub Flavored Markdown features and syntax highlighting."><meta name="twitter:image" content="http://localhost:1313/cn/posts/gfm-demo/featured.jpg">
+<link rel="canonical" href="http://localhost:1313/cn/posts/gfm-demo/">
+
+<link rel="alternate" hreflang="en" href="http://localhost:1313/en/posts/gfm-demo/"><link rel="stylesheet" href="/css/primer.min.c12daf26af408c64f29cc993dd5ab422334e71e50fa7198111b729fdf674e34d.css" integrity="sha256-wS2vJq9AjGTynMmT3Vq0IjNOceUPpxmBEbcp/fZ0400=">
+
+<link rel="stylesheet" href="/css/custom.min.a534e31973668ecfda3c859b065aa80371c91d8f02ed0cdc8684f78fa4d02967.css" integrity="sha256-pTTjGXNmjs/aPIWbBlqoA3HJHY8C7QzchoT3j6TQKWc=">
+
+<link rel="stylesheet" href="/css/sidebar.min.ab0aa014e39967c93d8614c12bb7de287363561df9a432264d72f3caa8014b5e.css" integrity="sha256-qwqgFOOZZ8k9hhTBK7feKHNjVh35pDImTXLzyqgBS14=">
+
+<link rel="stylesheet" href="/css/syntax.min.960b5586f436fb10556b930bb3d7720cd46e1fe111908670224cfbc646da0fda.css" integrity="sha256-lgtVhvQ2&#43;xBVa5MLs9dyDNRuH&#43;ERkIZwIkz7xkbaD9o=">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180x180.png"><link rel="apple-touch-icon" sizes="152x152" href="/static/apple-touch-icon-152x152.png"><link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QP462JDKRZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QP462JDKRZ');
+</script>
+<script>
+  (function() {
+    const saved = localStorage.getItem('theme');
+    const html = document.documentElement;
+    if (saved === 'light' || saved === 'dark') {
+      html.setAttribute('data-color-mode', saved);
+    }
+  })();
+</script></head>
+<body>
+  <div class="d-flex flex-column min-height-full"><header class="AppHeader">
+  <div class="AppHeader-globalBar">
+    <div class="AppHeader-globalBar-start">
+      <a href="/cn/" class="AppHeader-logo" aria-label="q1w264的博客"><span class="AppHeader-logo-text">q1w264的博客</span></a>
+
+      <nav class="AppHeader-nav" aria-label="主导航"><a href="/cn/about/" class="AppHeader-nav-item">关于</a></nav>
+    </div>
+
+    <div class="AppHeader-globalBar-end"><button type="button" id="theme-toggle"
+  class="tooltipped tooltipped-s"
+  aria-label="系统主题"
+  data-tooltip-light="浅色主题"
+  data-tooltip-dark="深色主题"
+  data-tooltip-auto="系统主题">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" class="octicon theme-icon-light" style="display: none;">
+    <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-1.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm5.657-8.157a.75.75 0 0 1 0 1.061l-1.061 1.06a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734l1.06-1.06a.75.75 0 0 1 1.06 0Zm-9.193 9.193a.75.75 0 0 1 0 1.06l-1.06 1.061a.75.75 0 1 1-1.061-1.06l1.06-1.061a.75.75 0 0 1 1.061 0ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0ZM3 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 3 8Zm13 0a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 16 8Zm-8 5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 8 13Zm3.536-1.464a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061Zm-9.193-9.193a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061L2.343 3.403a.75.75 0 0 1 0-1.06Z"></path>
+  </svg>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" class="octicon theme-icon-dark" style="display: none;">
+    <path d="M9.598 1.591a.749.749 0 0 1 .785-.175 7.001 7.001 0 1 1-8.967 8.967.75.75 0 0 1 .961-.96 5.5 5.5 0 0 0 7.046-7.046.75.75 0 0 1 .175-.786Zm1.616 1.945a7 7 0 0 1-7.678 7.678 5.499 5.499 0 1 0 7.678-7.678Z"></path>
+  </svg>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" class="octicon theme-icon-auto" style="display: none;">
+    <path d="M14.25 1c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 14.25 12h-3.727c.099 1.041.52 1.872 1.292 2.757A.752.752 0 0 1 11.25 16h-6.5a.75.75 0 0 1-.565-1.243c.772-.885 1.193-1.716 1.292-2.757H1.75A1.75 1.75 0 0 1 0 10.25v-7.5C0 1.784.784 1 1.75 1ZM1.75 2.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25ZM9.018 13H6.982a5.72 5.72 0 0 1-.765 1.5h3.566a5.72 5.72 0 0 1-.765-1.5Z"></path>
+  </svg>
+</button>
+<details class="dropdown details-reset details-overlay AppHeader-dropdown">
+        <summary class="AppHeader-button" aria-haspopup="true" aria-label="选择语言">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.581 4.948-.111.187-.229.371-.352.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.241.365.352.552.715 1.192 1.437 2.874 1.581 4.948Z"></path>
+          </svg>
+          <span class="AppHeader-button-text">简体中文</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="12" height="12" fill="currentColor" class="AppHeader-dropdown-caret">
+            <path d="m4.427 7.427 3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427Z"></path>
+          </svg>
+        </summary>
+        <ul class="dropdown-menu dropdown-menu-sw"><li>
+            <a href="/en/posts/gfm-demo/" class="dropdown-item" lang="en">English</a>
+          </li><li>
+            <a href="/cn/posts/gfm-demo/" class="dropdown-item selected" lang="cn">简体中文</a>
+          </li></ul>
+      </details></div>
+  </div>
+</header>
+<main class="flex-auto">
+      <div class="container-xl px-3 px-md-4 px-lg-5 py-4"><div class="Layout Layout--sidebarPosition-end Layout--flowRow-until-md">
+          <div class="Layout-main"><article>
+  <header class="mb-4">
+    <h1 class="f1 lh-condensed mb-2">GitHub Flavored Markdown Demo</h1><div class="d-flex flex-items-center color-fg-muted f5 mb-3"><time datetime="2024-01-20T00:00:00Z">
+        2024-01-20
+      </time><span class="mx-2">&middot;</span><span>7 分钟阅读</span><span class="mx-2">&middot;</span><span>Demo Author</span></div><div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;"><a href="/cn/tags/demo/" class="topic-tag">示例</a><a href="/cn/tags/markdown/" class="topic-tag">Markdown</a><a href="/cn/tags/gfm/" class="topic-tag">GFM</a></div><img src="/cn/posts/gfm-demo/featured.jpg" alt="GitHub Flavored Markdown Demo" loading="lazy" class="rounded-2 width-full mb-3" style="max-height: 400px; object-fit: cover;"></header>
+
+  <div class="markdown-body">
+    <p>This post demonstrates all GitHub Flavored Markdown (GFM) features and code syntax highlighting supported by this theme.</p>
+<h2 id="headings">Headings</h2>
+<h1 id="heading-1">Heading 1</h1>
+<h2 id="heading-2">Heading 2</h2>
+<h3 id="heading-3">Heading 3</h3>
+<h4 id="heading-4">Heading 4</h4>
+<h5 id="heading-5">Heading 5</h5>
+<h6 id="heading-6">Heading 6</h6>
+<hr>
+<h2 id="text-formatting">Text Formatting</h2>
+<p>Regular text paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p><strong>Bold text</strong> and <strong>also bold</strong></p>
+<p><em>Italic text</em> and <em>also italic</em></p>
+<p><em><strong>Bold and italic</strong></em> and <em><strong>also bold and italic</strong></em></p>
+<p><del>Strikethrough text</del></p>
+<p>This is a <!-- raw HTML omitted -->subscript<!-- raw HTML omitted --> and this is a <!-- raw HTML omitted -->superscript<!-- raw HTML omitted --></p>
+<hr>
+<h2 id="links">Links</h2>
+<p><a href="https://github.com">Inline link</a></p>
+<p><a href="https://github.com" title="GitHub Homepage">Link with title</a></p>
+<p><a href="https://github.com">Reference-style link</a></p>
+<p>Autolinked URL: <a href="https://github.com">https://github.com</a></p>
+<hr>
+<h2 id="images">Images</h2>
+<p><img src="/images/sample-image.svg" alt="Sample Image" loading="lazy">
+</p>
+<hr>
+<h2 id="lists">Lists</h2>
+<h3 id="unordered-list">Unordered List</h3>
+<ul>
+<li>Item 1</li>
+<li>Item 2
+<ul>
+<li>Nested item 2.1</li>
+<li>Nested item 2.2
+<ul>
+<li>Deeply nested item</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Item 3</li>
+</ul>
+<h3 id="ordered-list">Ordered List</h3>
+<ol>
+<li>First item</li>
+<li>Second item
+<ol>
+<li>Nested item 2.1</li>
+<li>Nested item 2.2</li>
+</ol>
+</li>
+<li>Third item</li>
+</ol>
+<h3 id="task-list">Task List</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Completed task</li>
+<li><input checked="" disabled="" type="checkbox"> Another completed task</li>
+<li><input disabled="" type="checkbox"> Incomplete task</li>
+<li><input disabled="" type="checkbox"> Another incomplete task</li>
+</ul>
+<hr>
+<h2 id="blockquotes">Blockquotes</h2>
+<blockquote>
+  <p>This is a blockquote.
+It can span multiple lines.</p>
+
+</blockquote><blockquote>
+  <p>Nested blockquotes:</p>
+<blockquote>
+  <p>This is nested</p>
+<blockquote>
+  <p>And even deeper</p>
+
+</blockquote>
+</blockquote>
+</blockquote><blockquote>
+  <p><strong>Blockquote with formatting</strong></p>
+<ul>
+<li>Can contain lists</li>
+<li>And other elements</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="fallback"><span class="line"><span class="cl">Even code blocks</span></span></code></pre></div>
+</blockquote><hr>
+<h2 id="code">Code</h2>
+<h3 id="inline-code">Inline Code</h3>
+<p>Use <code>const</code> for constants and <code>let</code> for variables in JavaScript.</p>
+<p>Install the package with <code>npm install package-name</code>.</p>
+<h3 id="code-blocks">Code Blocks</h3>
+<h4 id="javascript--typescript">JavaScript / TypeScript</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// ES6+ JavaScript example
+</span></span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">greet</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">async</span> <span class="kd">function</span> <span class="nx">fetchData</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">&#39;Error:&#39;</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">class</span> <span class="nx">Person</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">introduce</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="sb">`Hi, I&#39;m </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> and I&#39;m </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old.`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="typescript"><span class="line"><span class="cl"><span class="kr">interface</span> <span class="nx">User</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">id</span>: <span class="kt">number</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">email</span>: <span class="kt">string</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">isActive</span>: <span class="kt">boolean</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">type</span> <span class="nx">UserRole</span> <span class="o">=</span> <span class="s1">&#39;admin&#39;</span> <span class="o">|</span> <span class="s1">&#39;editor&#39;</span> <span class="o">|</span> <span class="s1">&#39;viewer&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getUserById</span><span class="p">(</span><span class="nx">id</span>: <span class="kt">number</span><span class="p">)</span><span class="o">:</span> <span class="nx">Promise</span><span class="p">&lt;</span><span class="nt">User</span> <span class="err">|</span> <span class="na">null</span><span class="p">&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="sb">`/api/users/</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="k">catch</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="kc">null</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><h4 id="python">Python</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">asyncio</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@dataclass</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl">    <span class="n">email</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl">    <span class="n">is_active</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">UserService</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">db_connection</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">db_connection</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Fetch a user by ID.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">query</span> <span class="o">=</span> <span class="s2">&#34;SELECT * FROM users WHERE id = ?&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">fetch_one</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">User</span><span class="p">(</span><span class="o">**</span><span class="n">result</span><span class="p">)</span> <span class="k">if</span> <span class="n">result</span> <span class="k">else</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_active_users</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">User</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Get all active users.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">query</span> <span class="o">=</span> <span class="s2">&#34;SELECT * FROM users WHERE is_active = true&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">results</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">fetch_all</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[</span><span class="n">User</span><span class="p">(</span><span class="o">**</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># List comprehension and lambda</span>
+</span></span><span class="line"><span class="cl"><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">squared</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">evens</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span></span></span></code></pre></div><h4 id="go">Go</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kn">import</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="s">&#34;context&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="s">&#34;encoding/json&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="s">&#34;fmt&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="s">&#34;net/http&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="s">&#34;time&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">type</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">ID</span><span class="w">        </span><span class="kt">int</span><span class="w">       </span><span class="s">`json:&#34;id&#34;`</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">Name</span><span class="w">      </span><span class="kt">string</span><span class="w">    </span><span class="s">`json:&#34;name&#34;`</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">Email</span><span class="w">     </span><span class="kt">string</span><span class="w">    </span><span class="s">`json:&#34;email&#34;`</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">CreatedAt</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"> </span><span class="s">`json:&#34;created_at&#34;`</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="o">*</span><span class="nx">User</span><span class="p">)</span><span class="w"> </span><span class="nf">String</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;User{ID: %d, Name: %s}&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">ID</span><span class="p">,</span><span class="w"> </span><span class="nx">u</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">fetchUser</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="nx">User</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">url</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;https://api.example.com/users/%d&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nf">NewRequestWithContext</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;GET&#34;</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">resp</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">http</span><span class="p">.</span><span class="nx">DefaultClient</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">defer</span><span class="w"> </span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">var</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="nx">User</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">json</span><span class="p">.</span><span class="nf">NewDecoder</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">).</span><span class="nf">Decode</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">user</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="k">return</span><span class="w"> </span><span class="kc">nil</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><h4 id="rust">Rust</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashMap</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">sync</span>::<span class="n">Arc</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">tokio</span>::<span class="n">sync</span>::<span class="n">RwLock</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#[derive(Debug, Clone)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">User</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span>: <span class="kt">u64</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">name</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">email</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="n">User</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">new</span><span class="p">(</span><span class="n">id</span>: <span class="kt">u64</span><span class="p">,</span><span class="w"> </span><span class="n">name</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">email</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">id</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">name</span>: <span class="nc">name</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">email</span>: <span class="nc">email</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">UserCache</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">cache</span>: <span class="nc">Arc</span><span class="o">&lt;</span><span class="n">RwLock</span><span class="o">&lt;</span><span class="n">HashMap</span><span class="o">&lt;</span><span class="kt">u64</span><span class="p">,</span><span class="w"> </span><span class="n">User</span><span class="o">&gt;&gt;&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="n">UserCache</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="k">fn</span> <span class="nf">get</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">id</span>: <span class="kt">u64</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">cache</span><span class="p">.</span><span class="n">read</span><span class="p">().</span><span class="k">await</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">cache</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="o">&amp;</span><span class="n">id</span><span class="p">).</span><span class="n">cloned</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="k">fn</span> <span class="nf">set</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">user</span>: <span class="nc">User</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">cache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">cache</span><span class="p">.</span><span class="n">write</span><span class="p">().</span><span class="k">await</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">cache</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">user</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><h4 id="html--css">HTML / CSS</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Sample Page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;styles.css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">header</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;site-header&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-menu&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-link&#34;</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/about&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav-link&#34;</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">main</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;content&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;post&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, World!<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="css"><span class="line"><span class="cl"><span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">--primary-color</span><span class="p">:</span> <span class="mh">#0969da</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">--background-color</span><span class="p">:</span> <span class="mh">#ffffff</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nv">--text-color</span><span class="p">:</span> <span class="mh">#1f2328</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="k">media</span> <span class="o">(</span><span class="nt">prefers-color-scheme</span><span class="o">:</span> <span class="nt">dark</span><span class="o">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="p">:</span><span class="nd">root</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--background-color</span><span class="p">:</span> <span class="mh">#0d1117</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">--text-color</span><span class="p">:</span> <span class="mh">#f0f6fc</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">site-header</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">justify-content</span><span class="p">:</span> <span class="kc">space-between</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span> <span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">background</span><span class="o">-</span><span class="kc">color</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-bottom</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#d0d7de</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">nav-menu</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">gap</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">nav-link</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">text</span><span class="o">-</span><span class="kc">color</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">font-weight</span><span class="p">:</span> <span class="mi">500</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">transition</span><span class="p">:</span> <span class="kc">color</span> <span class="mf">0.2</span><span class="kt">s</span> <span class="kc">ease</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">nav-link</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">primary</span><span class="o">-</span><span class="kc">color</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><h4 id="shell--bash">Shell / Bash</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Variables</span>
+</span></span><span class="line"><span class="cl"><span class="nv">PROJECT_NAME</span><span class="o">=</span><span class="s2">&#34;my-project&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">BUILD_DIR</span><span class="o">=</span><span class="s2">&#34;./dist&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Function definition</span>
+</span></span><span class="line"><span class="cl">build_project<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Building </span><span class="nv">$PROJECT_NAME</span><span class="s2">...&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Clean previous build</span>
+</span></span><span class="line"><span class="cl">    rm -rf <span class="s2">&#34;</span><span class="nv">$BUILD_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    mkdir -p <span class="s2">&#34;</span><span class="nv">$BUILD_DIR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Run build commands</span>
+</span></span><span class="line"><span class="cl">    npm run build <span class="o">||</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Build failed!&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Build completed successfully!&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Main execution</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[[</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;--production&#34;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">export</span> <span class="nv">NODE_ENV</span><span class="o">=</span>production
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">build_project
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Array and loop</span>
+</span></span><span class="line"><span class="cl"><span class="nv">files</span><span class="o">=(</span><span class="s2">&#34;index.html&#34;</span> <span class="s2">&#34;styles.css&#34;</span> <span class="s2">&#34;main.js&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> file in <span class="s2">&#34;</span><span class="si">${</span><span class="nv">files</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    cp <span class="s2">&#34;src/</span><span class="nv">$file</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$BUILD_DIR</span><span class="s2">/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span></span></span></code></pre></div><h4 id="json--yaml--toml">JSON / YAML / TOML</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;my-project&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;version&#34;</span><span class="p">:</span> <span class="s2">&#34;1.0.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;dependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;react&#34;</span><span class="p">:</span> <span class="s2">&#34;^18.2.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;typescript&#34;</span><span class="p">:</span> <span class="s2">&#34;^5.0.0&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;dev&#34;</span><span class="p">:</span> <span class="s2">&#34;vite&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;build&#34;</span><span class="p">:</span> <span class="s2">&#34;vite build&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="yaml"><span class="line"><span class="cl"><span class="c"># Docker Compose configuration</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.8&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="l">.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;3000:3000&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">NODE_ENV=production</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">DATABASE_URL=${DATABASE_URL}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">db</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">db</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">postgres:15</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">postgres_data:/var/lib/postgresql/data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">POSTGRES_USER</span><span class="p">:</span><span class="w"> </span><span class="l">admin</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">POSTGRES_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l">secret</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">POSTGRES_DB</span><span class="p">:</span><span class="w"> </span><span class="l">myapp</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="l">postgres_data:</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="toml"><span class="line"><span class="cl"><span class="c"># Hugo configuration</span>
+</span></span><span class="line"><span class="cl"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;https://example.com/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">languageCode</span> <span class="p">=</span> <span class="s2">&#34;en-us&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;My Blog&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;primer-blog&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">description</span> <span class="p">=</span> <span class="s2">&#34;A blog about technology&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">author</span> <span class="p">=</span> <span class="s2">&#34;John Doe&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">menu</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Home&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span></span></span></code></pre></div><h4 id="sql">SQL</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- Create users table
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">email</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">password_hash</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">TIME</span><span class="w"> </span><span class="k">ZONE</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">updated_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">TIME</span><span class="w"> </span><span class="k">ZONE</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">CURRENT_TIMESTAMP</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- Create index
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_users_email</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">users</span><span class="p">(</span><span class="n">email</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- Insert sample data
+</span></span></span><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">,</span><span class="w"> </span><span class="n">password_hash</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">VALUES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;john_doe&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;john@example.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;hashed_password_1&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">(</span><span class="s1">&#39;jane_smith&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;jane@example.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;hashed_password_2&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- Query with JOIN
+</span></span></span><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">u</span><span class="p">.</span><span class="n">username</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">u</span><span class="p">.</span><span class="n">email</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">COUNT</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">post_count</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="n">u</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">LEFT</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">posts</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">author_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">WHERE</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">created_at</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="s1">&#39;30 days&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">u</span><span class="p">.</span><span class="n">email</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">HAVING</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">post_count</span><span class="w"> </span><span class="k">DESC</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span></span></span></code></pre></div><h4 id="diff">Diff</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="diff"><span class="line"><span class="cl"><span class="gd">--- a/config.js
+</span></span></span><span class="line"><span class="cl"><span class="gi">+++ b/config.js
+</span></span></span><span class="line"><span class="cl"><span class="gu">@@ -1,7 +1,8 @@
+</span></span></span><span class="line"><span class="cl"> module.exports = {
+</span></span><span class="line"><span class="cl">   name: &#39;my-app&#39;,
+</span></span><span class="line"><span class="cl"><span class="gd">-  version: &#39;1.0.0&#39;,
+</span></span></span><span class="line"><span class="cl"><span class="gi">+  version: &#39;1.1.0&#39;,
+</span></span></span><span class="line"><span class="cl">   settings: {
+</span></span><span class="line"><span class="cl"><span class="gd">-    debug: true
+</span></span></span><span class="line"><span class="cl"><span class="gi">+    debug: false,
+</span></span></span><span class="line"><span class="cl"><span class="gi">+    logging: true
+</span></span></span><span class="line"><span class="cl">   }
+</span></span><span class="line"><span class="cl"> };
+</span></span></code></pre></div><hr>
+<h2 id="tables">Tables</h2>
+<h3 id="simple-table">Simple Table</h3>
+<table>
+	<thead>
+			<tr>
+					<th>Name</th>
+					<th>Age</th>
+					<th>City</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Alice</td>
+					<td>28</td>
+					<td>Tokyo</td>
+			</tr>
+			<tr>
+					<td>Bob</td>
+					<td>32</td>
+					<td>London</td>
+			</tr>
+			<tr>
+					<td>Carol</td>
+					<td>25</td>
+					<td>Paris</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="aligned-table">Aligned Table</h3>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">Left-aligned</th>
+					<th style="text-align: center">Center-aligned</th>
+					<th style="text-align: right">Right-aligned</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Left</td>
+					<td style="text-align: center">Center</td>
+					<td style="text-align: right">Right</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Text</td>
+					<td style="text-align: center">Text</td>
+					<td style="text-align: right">Text</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">More</td>
+					<td style="text-align: center">More</td>
+					<td style="text-align: right">More</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="complex-table">Complex Table</h3>
+<table>
+	<thead>
+			<tr>
+					<th>Feature</th>
+					<th>Status</th>
+					<th>Notes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Markdown</td>
+					<td>:white_check_mark: Supported</td>
+					<td>Full GFM support</td>
+			</tr>
+			<tr>
+					<td>Syntax Highlighting</td>
+					<td>:white_check_mark: Supported</td>
+					<td>Multiple languages</td>
+			</tr>
+			<tr>
+					<td>Math Equations</td>
+					<td>:x: Not supported</td>
+					<td>Use images instead</td>
+			</tr>
+			<tr>
+					<td>Mermaid Diagrams</td>
+					<td>:x: Not supported</td>
+					<td>Planned feature</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h2 id="horizontal-rules">Horizontal Rules</h2>
+<p>Three different ways to create horizontal rules:</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="escaping-characters">Escaping Characters</h2>
+<p>*Not italic*</p>
+<p>`Not code`</p>
+<p># Not a heading</p>
+<hr>
+<h2 id="keyboard-keys">Keyboard Keys</h2>
+<p>Press <!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted --> + <!-- raw HTML omitted -->C<!-- raw HTML omitted --> to copy.</p>
+<p>Press <!-- raw HTML omitted -->Cmd<!-- raw HTML omitted --> + <!-- raw HTML omitted -->Shift<!-- raw HTML omitted --> + <!-- raw HTML omitted -->P<!-- raw HTML omitted --> to open command palette.</p>
+<hr>
+<h2 id="abbreviations">Abbreviations</h2>
+<p>The HTML specification is maintained by the W3C.</p>
+<p>*[HTML]: Hyper Text Markup Language
+*[W3C]: World Wide Web Consortium</p>
+<hr>
+<h2 id="footnotes">Footnotes</h2>
+<p>Here&rsquo;s a sentence with a footnote<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p>And another one<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+<hr>
+<h2 id="details--summary-collapsible">Details / Summary (Collapsible)</h2>
+<!-- raw HTML omitted -->
+<p>This content is hidden by default.</p>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="javascript"><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hidden code!&#39;</span><span class="p">);</span></span></span></code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>This section is visible by default because of the <code>open</code> attribute.</p>
+<!-- raw HTML omitted -->
+<hr>
+<h2 id="alerts--notes-github-style">Alerts / Notes (GitHub Style)</h2>
+<blockquote class="markdown-alert markdown-alert-note">
+  <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="4.75" r=".9" fill="currentColor"/><path d="M8 7.25v4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>注意</p>
+  <p>This is a note callout.</p>
+</blockquote><blockquote class="markdown-alert markdown-alert-tip">
+  <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.75a4.25 4.25 0 0 0-2.87 7.38c.45.4.85 1.09 1.05 1.87h3.64c.2-.78.6-1.47 1.05-1.87A4.25 4.25 0 0 0 8 1.75Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6.25 12.25h3.5M6.75 14.25h2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>提示</p>
+  <p>This is a tip callout.</p>
+</blockquote><blockquote class="markdown-alert markdown-alert-important">
+  <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.25v4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.4" r=".9" fill="currentColor"/></svg>重要</p>
+  <p>This is an important callout.</p>
+</blockquote><blockquote class="markdown-alert markdown-alert-warning">
+  <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M7.15 2.4a.95.95 0 0 1 1.7 0l4.65 9.35a.95.95 0 0 1-.85 1.4H3.35a.95.95 0 0 1-.85-1.4Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 5.1v3.7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="10.9" r=".9" fill="currentColor"/></svg>警告</p>
+  <p>This is a warning callout.</p>
+</blockquote><blockquote class="markdown-alert markdown-alert-caution">
+  <p class="markdown-alert-title"><svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 1.75h5l3.75 3.75v5l-3.75 3.75h-5L1.75 10.5v-5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 4.5v4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.25" r=".9" fill="currentColor"/></svg>小心</p>
+  <p>This is a caution callout.</p>
+</blockquote><hr>
+<h3 id="1-行内公式inline-mode">1. 行内公式（Inline Mode）</h3>
+<ul>
+<li><strong>基础测试</strong>：质能方程为 <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E = mc^2</annotation></semantics></math></span>。</li>
+<li><strong>条件测试</strong>：若 <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a \le b</annotation></semantics></math></span> 且 <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>≤</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">b \le c</annotation></semantics></math></span>，则 <span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>≤</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a \le c</annotation></semantics></math></span>。</li>
+</ul>
+<h3 id="2-独立块级公式display-mode">2. 独立块级公式（Display Mode）</h3>
+<ul>
+<li>
+<p><strong>二次方程求根公式</strong>：
+</p>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}</annotation></semantics></math></span></li>
+<li>
+<p><strong>微积分（微积分基本定理）</strong>：
+</p>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext> </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\int_{a}^{b} f(x) \, dx = F(b) - F(a)</annotation></semantics></math></span></li>
+<li>
+<p><strong>高斯分布（正态概率密度函数）</strong>：
+</p>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mi>σ</mi><msqrt><mrow><mn>2</mn><mi>π</mi></mrow></msqrt></mrow></mfrac><mi>exp</mi><mo>⁡</mo><mrow><mo fence="true">(</mo><mo>−</mo><mfrac><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mi>μ</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><mrow><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow></mfrac><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">f(x) = \frac{1}{\sigma \sqrt{2\pi}} \exp\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)</annotation></semantics></math></span></li>
+</ul>
+<h3 id="3-多行公式与对齐align-env">3. 多行公式与对齐（Align Env）</h3>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mi>a</mi><mi>b</mi><mo>+</mo><mi>b</mi><mi>a</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">
+\begin{aligned}
+(a + b)^2 &amp;= (a + b)(a + b) \\
+&amp;= a^2 + ab + ba + b^2 \\
+&amp;= a^2 + 2ab + b^2
+\end{aligned}
+</annotation></semantics></math></span><h3 id="4-矩阵与分段函数matrix--piecewise">4. 矩阵与分段函数（Matrix &amp; Piecewise）</h3>
+<ul>
+<li>
+<p><strong>标准矩阵</strong>：
+</p>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="bold">A</mi><mo>=</mo><mrow><mo fence="true">(</mo><mtable rowspacing="0.16em" columnalign="center center center center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>a</mi><mn>11</mn></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>a</mi><mn>12</mn></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mo lspace="0em" rspace="0em">⋯</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>a</mi><mrow><mn>1</mn><mi>n</mi></mrow></msub></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>a</mi><mn>21</mn></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>a</mi><mn>22</mn></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mo lspace="0em" rspace="0em">⋯</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>a</mi><mrow><mn>2</mn><mi>n</mi></mrow></msub></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi mathvariant="normal">⋮</mi><mpadded height="0em" voffset="0em"><mspace mathbackground="black" width="0em" height="1.5em"></mspace></mpadded></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi mathvariant="normal">⋮</mi><mpadded height="0em" voffset="0em"><mspace mathbackground="black" width="0em" height="1.5em"></mspace></mpadded></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mo lspace="0em" rspace="0em">⋱</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi mathvariant="normal">⋮</mi><mpadded height="0em" voffset="0em"><mspace mathbackground="black" width="0em" height="1.5em"></mspace></mpadded></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>a</mi><mrow><mi>m</mi><mn>1</mn></mrow></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>a</mi><mrow><mi>m</mi><mn>2</mn></mrow></msub></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mo lspace="0em" rspace="0em">⋯</mo></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>a</mi><mrow><mi>m</mi><mi>n</mi></mrow></msub></mstyle></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbf{A} = \begin{pmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} \end{pmatrix}</annotation></semantics></math></span></li>
+<li>
+<p><strong>分段函数（绝对值定义）</strong>：
+</p>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>x</mi><mi mathvariant="normal">∣</mi><mo>=</mo><mrow><mo fence="true">{</mo><mtable rowspacing="0.36em" columnalign="left left" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>x</mi><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>if </mtext><mi>x</mi><mo>≥</mo><mn>0</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mi>x</mi><mo separator="true">,</mo></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mtext>if </mtext><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></mstyle></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">\vert x \vert = \begin{cases} x, &amp; \text{if } x \ge 0 \\ -x, &amp; \text{if } x &lt; 0 \end{cases}</annotation></semantics></math></span></li>
+</ul>
+<h3 id="5-符号完备性测试希腊字母与求和">5. 符号完备性测试（希腊字母与求和）</h3>
+<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msup><mi>i</mi><mn>3</mn></msup><mo>=</mo><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi>n</mi><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></mfrac><mo fence="true">)</mo></mrow><mn>2</mn></msup><mspace width="1em"/><mtext>其中</mtext><mspace width="1em"/><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo separator="true">,</mo><mi>γ</mi><mo separator="true">,</mo><mi>θ</mi><mo>∈</mo><mi mathvariant="double-struck">R</mi></mrow><annotation encoding="application/x-tex">\sum_{i=1}^{n} i^3 = \left( \frac{n(n+1)}{2} \right)^2 \quad \text{其中} \quad \alpha, \beta, \gamma, \theta \in \mathbb{R}</annotation></semantics></math></span><hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>This page demonstrates the full range of GitHub Flavored Markdown features. If any elements don&rsquo;t render correctly, please check the theme configuration and Hugo settings.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>This is the first footnote.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>This is the second footnote with more content.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+  </div><div class="border-top pt-4 mt-4 share-block" data-share-root data-share-url="http://localhost:1313/cn/posts/gfm-demo/" data-share-title="GitHub Flavored Markdown Demo" data-share-copy-success="链接已复制。" data-share-copy-failure="复制失败，请手动复制这个链接：">
+  <style>
+    .share-block {
+      --share-button-bg: var(--button-default-bgColor, var(--bgColor-muted, #f6f8fa));
+      --share-button-fg: var(--fgColor-default, #1f2328);
+      --share-border: var(--borderColor-default, #d0d7de);
+      --share-border-strong: var(--borderColor-muted, #afb8c1);
+      --share-muted: var(--fgColor-muted, #57606a);
+      --share-icon-fg: var(--share-muted);
+      --share-panel-bg: var(--bgColor-muted, #f6f8fa);
+      --share-surface-bg: var(--bgColor-default, #ffffff);
+      --share-badge-bg: var(--neutral-muted, rgba(175, 184, 193, 0.2));
+      --share-accent: var(--accent-fgColor, #0969da);
+      --share-accent-ring: color-mix(in srgb, var(--accent-fgColor, #0969da) 14%, transparent);
+      --share-accent-subtle: var(--accent-subtle, rgba(9, 105, 218, 0.12));
+    }
+
+    html[data-color-mode="dark"] .share-block,
+    html[data-dark-theme="dark"][data-color-mode="auto"] .share-block {
+      --share-button-bg: var(--button-default-bgColor, #212830);
+      --share-button-fg: var(--fgColor-default, #f0f6fc);
+      --share-border: var(--borderColor-default, #3d444d);
+      --share-border-strong: var(--borderColor-muted, #656c76);
+      --share-muted: var(--fgColor-muted, #9198a1);
+      --share-icon-fg: var(--fgColor-default, #dce6f2);
+      --share-panel-bg: var(--bgColor-muted, #161b22);
+      --share-surface-bg: var(--bgColor-default, #0d1117);
+      --share-badge-bg: var(--neutral-muted, rgba(110, 118, 129, 0.34));
+      --share-accent: var(--accent-fgColor, #4493f8);
+      --share-accent-ring: color-mix(in srgb, var(--accent-fgColor, #4493f8) 18%, transparent);
+      --share-accent-subtle: var(--accent-subtle, rgba(56, 139, 253, 0.18));
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html[data-color-mode="auto"] .share-block {
+        --share-button-bg: var(--button-default-bgColor, #212830);
+        --share-button-fg: var(--fgColor-default, #f0f6fc);
+        --share-border: var(--borderColor-default, #3d444d);
+        --share-border-strong: var(--borderColor-muted, #656c76);
+        --share-muted: var(--fgColor-muted, #9198a1);
+        --share-icon-fg: var(--fgColor-default, #dce6f2);
+        --share-panel-bg: var(--bgColor-muted, #161b22);
+        --share-surface-bg: var(--bgColor-default, #0d1117);
+        --share-badge-bg: var(--neutral-muted, rgba(110, 118, 129, 0.34));
+        --share-accent: var(--accent-fgColor, #4493f8);
+        --share-accent-ring: color-mix(in srgb, var(--accent-fgColor, #4493f8) 18%, transparent);
+        --share-accent-subtle: var(--accent-subtle, rgba(56, 139, 253, 0.18));
+      }
+    }
+
+    .share-block .share-actions {
+      gap: 0.5rem;
+    }
+
+    .share-block .share-button {
+      align-items: center;
+      background: var(--share-button-bg);
+      border: 1px solid var(--share-border);
+      border-radius: 999px;
+      color: var(--share-button-fg);
+      display: inline-flex;
+      gap: 0.35rem;
+      justify-content: center;
+      padding: 0.45rem 0.85rem;
+      transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .share-block .share-button:hover,
+    .share-block .share-button:focus-visible {
+      background: var(--share-panel-bg);
+      border-color: var(--share-accent);
+      box-shadow: 0 0 0 3px var(--share-accent-ring);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .share-block .share-button:focus-visible {
+      outline: none;
+    }
+
+    .share-block .share-icon {
+      display: inline-flex;
+      flex: 0 0 auto;
+    }
+
+    .share-block .share-icon-badge {
+      align-items: center;
+      background: var(--share-badge-bg);
+      border: 1px solid color-mix(in srgb, var(--share-border-strong) 75%, transparent);
+      border-radius: 0.55rem;
+      color: var(--share-icon-fg);
+      display: inline-flex;
+      height: 1.65rem;
+      justify-content: center;
+      min-width: 1.65rem;
+      overflow: visible;
+      padding: 0.1rem;
+    }
+
+    .share-block .share-icon svg {
+      display: block;
+      fill: currentColor;
+      height: 1rem;
+      width: 1rem;
+    }
+
+    .share-block .share-icon--weibo svg {
+      height: 1.12rem;
+      width: 1.12rem;
+    }
+
+    .share-block .share-icon--reddit svg {
+      height: 1.08rem;
+      width: 1.08rem;
+    }
+
+    .share-block .share-button:hover .share-icon-badge,
+    .share-block .share-button:focus-visible .share-icon-badge {
+      background: var(--share-accent-subtle);
+      color: var(--share-accent);
+    }
+
+    html[data-color-mode="dark"] .share-block .share-icon-badge,
+    html[data-dark-theme="dark"][data-color-mode="auto"] .share-block .share-icon-badge {
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--share-border-strong) 38%, transparent);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html[data-color-mode="auto"] .share-block .share-icon-badge {
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--share-border-strong) 38%, transparent);
+      }
+    }
+
+    .share-block .share-button span:last-child {
+      font-weight: 500;
+    }
+
+    .share-block .share-panel {
+      background: var(--share-panel-bg);
+      border: 1px solid var(--share-border);
+      border-radius: 0.5rem;
+      margin-top: 0.75rem;
+      max-width: 26rem;
+      padding: 1rem;
+    }
+
+    .share-block .share-panel[hidden] {
+      display: none;
+    }
+
+    .share-block .share-panel-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .share-block .share-panel-text {
+      color: var(--share-muted);
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .share-block .share-qr-frame {
+      align-items: center;
+      background: var(--share-surface-bg);
+      border: 1px solid var(--share-border);
+      border-radius: 0.5rem;
+      display: inline-flex;
+      justify-content: center;
+      min-height: 180px;
+      min-width: 180px;
+      padding: 0.75rem;
+    }
+
+    .share-block .share-qr-image {
+      display: block;
+      height: 180px;
+      width: 180px;
+    }
+
+    .share-block .share-feedback {
+      color: var(--share-muted);
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+      min-height: 1.25rem;
+    }
+
+    @media (max-width: 543px) {
+      .share-block .share-actions .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .share-block .share-button {
+        width: 100%;
+      }
+
+      .share-block .share-panel {
+        max-width: none;
+      }
+    }
+  </style>
+
+  <p class="f5 text-bold mb-2">分享</p>
+  <div class="d-flex flex-wrap share-actions"><button type="button" class="btn btn-sm share-button" data-share-action="wechat" aria-controls="share-panel-wechat" aria-expanded="false"><span class="share-icon share-icon--wechat" aria-hidden="true">
+  <span class="share-icon-badge"><svg viewBox="0 0 16 16"><path d="M5 2C2.239 2 0 3.79 0 6c0 1.235.708 2.339 1.822 3.073L1.2 11.5l2.522-1.26c.418.085.844.127 1.278.126 2.761 0 5-1.79 5-4s-2.239-4-5-4Zm0 6.866a5.13 5.13 0 0 1-1.33-.175l-.215-.058-1.31.655.301-1.14-.19-.134C1.47 7.46 1 6.755 1 6c0-1.657 1.79-3 4-3s4 1.343 4 3-1.79 2.866-4 2.866Zm6-1.366c-.313 0-.616.04-.897.115.253.414.397.882.397 1.385 0 1.924-2.015 3.5-4.5 3.5-.19 0-.377-.01-.56-.03.71.908 1.967 1.53 3.56 1.53.37.001.74-.033 1.104-.102L12.25 15l-.489-1.463C13.128 12.886 14 11.77 14 10.5c0-1.657-1.343-3-3-3Zm-3.5-2a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm-3 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm7 4a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm-3 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"></path></svg></span>
+</span><span>微信</span>
+      </button><a href="https://service.weibo.com/share/share.php?url=http%3A%2F%2Flocalhost%3A1313%2Fcn%2Fposts%2Fgfm-demo%2F&amp;title=GitHub&#43;Flavored&#43;Markdown&#43;Demo" target="_blank" rel="noopener noreferrer" class="btn btn-sm share-button"><span class="share-icon share-icon--weibo" aria-hidden="true">
+  <span class="share-icon-badge"><svg viewBox="0 0 16 16"><path d="M8.052 4.002c-2.86 0-5.24 1.71-5.24 3.88 0 2.162 2.38 3.914 5.24 3.914 2.858 0 5.136-1.752 5.136-3.914 0-2.17-2.278-3.88-5.136-3.88Zm0 6.562c-2.303 0-4.02-1.283-4.02-2.682 0-1.408 1.717-2.648 4.02-2.648 2.294 0 3.915 1.24 3.915 2.648 0 1.399-1.621 2.682-3.915 2.682Zm4.762-7.17a2.78 2.78 0 0 0-1.717-.598.56.56 0 0 0 0 1.12c.462 0 .904.153 1.252.438.448.361.719.875.759 1.44a.56.56 0 0 0 .557.518h.042a.56.56 0 0 0 .517-.598 3.437 3.437 0 0 0-1.41-2.32Zm-1.134 3.74a.49.49 0 0 0 .453-.523 1.86 1.86 0 0 0-.76-1.248 1.78 1.78 0 0 0-1.126-.392.49.49 0 1 0 0 .98c.19 0 .375.064.518.181.182.147.292.36.309.59a.49.49 0 0 0 .489.412h.04Zm-5.49-.478a1.03 1.03 0 1 1 0 2.06 1.03 1.03 0 0 1 0-2.06Zm3.213 0a1.03 1.03 0 1 1 0 2.06 1.03 1.03 0 0 1 0-2.06Z"></path></svg></span>
+</span><span>微博</span>
+      </a><button type="button" class="btn btn-sm share-button" data-share-action="copy"><span class="share-icon share-icon--copy" aria-hidden="true">
+  <span class="share-icon-badge"><svg viewBox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></span>
+</span><span>复制链接</span>
+      </button></div><div id="share-panel-wechat" class="share-panel" data-share-panel="wechat" hidden>
+    <div class="share-panel-title">微信</div>
+    <p class="share-panel-text">打开微信扫一扫，即可分享这篇文章。</p>
+    <div class="share-qr-frame">
+      <img class="share-qr-image" data-share-qr alt="这篇文章的微信分享二维码">
+    </div>
+  </div><p class="share-feedback" data-share-feedback aria-live="polite"></p>
+
+  <script>
+    (function () {
+      var root = document.currentScript && document.currentScript.parentElement;
+      if (!root || root.dataset.shareReady === 'true') {
+        return;
+      }
+      root.dataset.shareReady = 'true';
+
+      var shareUrl = root.getAttribute('data-share-url') || window.location.href;
+      var feedback = root.querySelector('[data-share-feedback]');
+      var qrImage = root.querySelector('[data-share-qr]');
+      var copySuccess = root.getAttribute('data-share-copy-success');
+      var copyFailure = root.getAttribute('data-share-copy-failure');
+      var wechatPanel = root.querySelector('[data-share-panel="wechat"]');
+      var feedbackTimer;
+
+      function setFeedback(message) {
+        if (!feedback) {
+          return;
+        }
+        feedback.textContent = message || '';
+        window.clearTimeout(feedbackTimer);
+        if (message) {
+          feedbackTimer = window.setTimeout(function () {
+            feedback.textContent = '';
+          }, 2400);
+        }
+      }
+
+      function closePanels(exceptName) {
+        var panels = root.querySelectorAll('[data-share-panel]');
+        panels.forEach(function (panel) {
+          if (panel.getAttribute('data-share-panel') !== exceptName) {
+            panel.hidden = true;
+          }
+        });
+      }
+
+      function ensureQrCode() {
+        if (!qrImage || qrImage.getAttribute('src')) {
+          return;
+        }
+        qrImage.setAttribute('src', 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent(shareUrl));
+      }
+
+      function copyLink() {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          return navigator.clipboard.writeText(shareUrl);
+        }
+
+        return new Promise(function (resolve, reject) {
+          var input = document.createElement('input');
+          input.type = 'text';
+          input.value = shareUrl;
+          input.setAttribute('readonly', 'readonly');
+          input.style.position = 'absolute';
+          input.style.left = '-9999px';
+          document.body.appendChild(input);
+          input.select();
+          input.setSelectionRange(0, input.value.length);
+          try {
+            if (!document.execCommand('copy')) {
+              throw new Error('copy failed');
+            }
+            resolve();
+          } catch (error) {
+            reject(error);
+          } finally {
+            document.body.removeChild(input);
+          }
+        });
+      }
+
+      root.querySelectorAll('[data-share-action]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var action = button.getAttribute('data-share-action');
+
+          if (action === 'copy') {
+            closePanels();
+            copyLink().then(function () {
+              setFeedback(copySuccess);
+            }).catch(function () {
+              setFeedback(copyFailure + ' ' + shareUrl);
+            });
+            return;
+          }
+
+          if (action === 'wechat' && wechatPanel) {
+            var willOpen = wechatPanel.hidden;
+            closePanels(willOpen ? 'wechat' : '');
+            if (willOpen) {
+              ensureQrCode();
+            }
+            wechatPanel.hidden = !willOpen;
+            button.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+          }
+        });
+      });
+    })();
+  </script>
+</div><div class="border-top pt-4 mt-4">
+  <h2 class="f4 mb-3">评论</h2>
+  <div id="giscus-container"></div>
+</div>
+
+<script>
+(function () {
+  function getGiscusTheme() {
+    var mode = document.documentElement.getAttribute('data-color-mode');
+    if (mode === 'dark') return 'dark';
+    if (mode === 'light') return 'light';
+    return 'preferred_color_scheme';
+  }
+
+  
+  var script = document.createElement('script');
+  script.src = 'https://giscus.app/client.js';
+  script.setAttribute('data-repo', 'q1w264/MyBlog');
+  script.setAttribute('data-repo-id', 'R_kgDOQ-lMpQ');
+  script.setAttribute('data-category', 'Comments');
+  script.setAttribute('data-category-id', 'DIC_kwDOQ-lMpc4DARnw');
+  script.setAttribute('data-mapping', 'pathname');
+  script.setAttribute('data-strict', '0');
+  script.setAttribute('data-reactions-enabled', '1');
+  script.setAttribute('data-emit-metadata', '0');
+  script.setAttribute('data-input-position', 'bottom');
+  script.setAttribute('data-theme', getGiscusTheme());
+  script.setAttribute('data-lang', 'zh-CN');
+  script.setAttribute('data-loading', 'lazy');
+  script.setAttribute('crossorigin', 'anonymous');
+  script.async = true;
+  document.getElementById('giscus-container').appendChild(script);
+
+  
+  var observer = new MutationObserver(function () {
+    var iframe = document.querySelector('iframe.giscus-frame');
+    if (iframe) {
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: getGiscusTheme() } } },
+        'https://giscus.app'
+      );
+    }
+  });
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-color-mode']
+  });
+})();
+</script><nav class="border-top pt-4 mt-4">
+    <div class="d-flex flex-justify-between"><span></span><a href="/cn/posts/getting-started-with-hugo/" class="Link--secondary">
+        Hugo 入门指南 &rarr;
+      </a></div>
+  </nav></article>
+          </div>
+          <div class="Layout-sidebar"><aside><div class="color-bg-subtle rounded-2 p-3 mb-3">
+  <h3 class="h5 mb-2">关于我</h3>
+  <div class="d-flex flex-items-center mb-2">
+    <a href="/cn/about/" aria-label="关于我">
+      <img src="/images/logo.png" alt="Author" class="avatar avatar-6 mr-2" width="48" height="48">
+    </a>
+    <div>
+      <strong class="d-block">q1w264</strong>
+      <span class="f6 color-fg-muted">开发者 &amp; 学生</span>
+    </div>
+  </div>
+  <p class="f6 color-fg-muted mb-0">
+    欢迎来到我的博客！
+  </p>
+</div>
+<div class="color-bg-subtle rounded-2 p-3 mb-3">
+  <h3 class="h5 mb-2">关注我</h3>
+  <div class="d-flex flex-wrap">
+    <a href="https://github.com/q1w264" class="btn btn-sm mr-1 mb-1" target="_blank" rel="noopener">
+      <svg class="octicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+        <path fill="currentColor"
+          d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
+        </path>
+      </svg>
+      GitHub
+    </a>
+    
+  </div>
+</div><div class="color-bg-subtle rounded-2 p-3 mb-3">
+  <h3 class="h5 mb-2">分类</h3>
+  <ul class="list-style-none"><li class="mb-1">
+      <a href="/cn/categories/documentation/" class="Link--secondary">
+        文档 <span class="Counter Counter--secondary ml-1">1</span>
+      </a>
+    </li><li class="mb-1">
+      <a href="/cn/categories/tutorial/" class="Link--secondary">
+        教程 <span class="Counter Counter--secondary ml-1">1</span>
+      </a>
+    </li></ul>
+</div><div class="color-bg-subtle rounded-2 p-3 mb-3">
+  <h3 class="h5 mb-2">近期文章</h3>
+  <ul class="list-style-none"><li class="mb-2">
+      <a href="/cn/posts/getting-started-with-hugo/" class="Link--primary">Hugo 入门指南</a><span class="color-fg-muted f6 d-block">
+        2026-06-27
+      </span></li><li class="mb-2">
+      <a href="/cn/posts/gfm-demo/" class="Link--primary">GitHub Flavored Markdown Demo</a><span class="color-fg-muted f6 d-block">
+        2024-01-20
+      </span></li></ul>
+</div><div class="color-bg-subtle rounded-2 p-3 mb-3">
+  <h3 class="h5 mb-2">
+    <a href="/cn/tags/" class="Link--primary">标签</a>
+  </h3>
+  <div class="sidebar-collapsible d-flex flex-wrap" style="gap: 0.5rem;"
+    data-max-height="150"
+    data-view-all="/cn/tags/"
+    data-label-more="显示更多"
+    data-label-less="显示更少"
+    data-label-view-all="查看全部"><a href="/cn/tags/demo/" class="topic-tag">示例</a><a href="/cn/tags/gfm/" class="topic-tag">GFM</a><a href="/cn/tags/hugo/" class="topic-tag">Hugo</a><a href="/cn/tags/markdown/" class="topic-tag">Markdown</a><a href="/cn/tags/static-site/" class="topic-tag">静态网站</a></div>
+</div></aside></div>
+        </div></div>
+    </main><footer class="color-bg-subtle border-top py-6 mt-6">
+  <div class="container-xl px-3 px-md-4 px-lg-5">
+    <div class="d-flex flex-column flex-md-row flex-justify-between flex-items-center">
+      <div class="mb-3 mb-md-0">
+        <p class="color-fg-muted mb-0">
+          &copy; 2026 q1w264的博客.</p>
+      </div><div class="d-flex flex-items-center"><a href="https://github.com/q1w264" class="Link--secondary px-2" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="20" height="20" class="octicon">
+            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+          </svg>
+        </a></div></div>
+
+    <p class="color-fg-muted f6 mt-4 text-center">
+      Powered by
+      <a href="https://github.com/ngs/hugo-primer-blog" class="Link--secondary">Hugo Primer Blog</a>
+    </p>
+  </div>
+</footer>
+</div><script src="/js/theme-switcher.min.7378bbae7a4bc4b974611d68fe84197c86faf4bb09e4744c2789f4bd36159a0b.js" integrity="sha256-c3i7rnpLxLl0YR1o/oQZfIb69LsJ5HRMJ4n0vTYVmgs="></script><script src="/js/sidebar.min.8d897965d82e39784b4da02d345c06f44ecdff6252fcf44c20eeb421f1027114.js" integrity="sha256-jYl5ZdguOXhLTaAtNFwG9E7N/2JS/PRMIO60IfECcRQ="></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{{- $html := .content -}}
+{{- $headings := slice -}}
+{{- $flat := replaceRE "\n" " " $html -}}
+{{- range findRESubmatch `<h([1-6]) id="([^"]+)">([^<]+)</h[1-6]>` $flat -}}
+  {{- $headings = append $headings (dict "level" (index . 1) "id" (index . 2) "title" (index . 3)) -}}
+{{- end -}}
+{{- if not $html -}}
+<div class="TOC-debug">TOC input empty</div>
+{{- else if eq (len $headings) 0 -}}
+<div class="TOC-debug">TOC no matches</div>
+{{- end -}}
+{{- if gt (len $headings) 0 -}}
+<nav class="TOC color-bg-subtle rounded-2 p-3 mb-4">
+  <h2 class="h4 mb-3">{{ i18n "articleStructure" | default "Contents" }}</h2>
+  <ul class="TOC__list list-style-none m-0 p-0">
+    {{- range $headings -}}
+      <li class="TOC__item TOC__item--lvl{{ .level }}">
+        <a href="#{{ .id }}">{{ .title }}</a>
+      </li>
+    {{- end -}}
+  </ul>
+</nav>
+{{- end -}}

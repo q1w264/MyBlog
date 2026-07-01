@@ -1,0 +1,13 @@
+{{- if site.Params.sidebar -}}
+<aside>
+	{{- range site.Params.sidebarModules -}}
+		{{- with .partial -}}
+			{{- $module := . -}}
+			{{- if eq $module "aboutMe" -}}
+				{{- $module = "aboutme" -}}
+			{{- end -}}
+			{{- partial (printf "sidebar/%s.html" $module) $ -}}
+		{{- end -}}
+	{{- end -}}
+</aside>
+{{- end -}}

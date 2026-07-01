@@ -1,0 +1,24 @@
+{{- $icons := dict
+  "caution" `<svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 1.75h5l3.75 3.75v5l-3.75 3.75h-5L1.75 10.5v-5Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 4.5v4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.25" r=".9" fill="currentColor"/></svg>`
+  "important" `<svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 4.25v4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.4" r=".9" fill="currentColor"/></svg>`
+  "note" `<svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="4.75" r=".9" fill="currentColor"/><path d="M8 7.25v4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`
+  "tip" `<svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.75a4.25 4.25 0 0 0-2.87 7.38c.45.4.85 1.09 1.05 1.87h3.64c.2-.78.6-1.47 1.05-1.87A4.25 4.25 0 0 0 8 1.75Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6.25 12.25h3.5M6.75 14.25h2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`
+  "warning" `<svg class="markdown-alert-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M7.15 2.4a.95.95 0 0 1 1.7 0l4.65 9.35a.95.95 0 0 1-.85 1.4H3.35a.95.95 0 0 1-.85-1.4Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 5.1v3.7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="10.9" r=".9" fill="currentColor"/></svg>`
+-}}
+{{- if eq .Type "alert" -}}
+<blockquote class="markdown-alert markdown-alert-{{ .AlertType }}">
+  <p class="markdown-alert-title">
+    {{- index $icons .AlertType | default (index $icons "note") | safeHTML -}}
+    {{- with .AlertTitle -}}
+      {{ . }}
+    {{- else -}}
+      {{ or (i18n .AlertType) (title .AlertType) }}
+    {{- end -}}
+  </p>
+  {{ .Text }}
+</blockquote>
+{{- else -}}
+<blockquote>
+  {{ .Text }}
+</blockquote>
+{{- end -}}

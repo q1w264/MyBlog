@@ -14,9 +14,11 @@
 
 <link rel="alternate" hreflang="en" href="http://localhost:1313/en/posts/getting-started-with-hugo/"><link rel="stylesheet" href="/css/primer.min.c12daf26af408c64f29cc993dd5ab422334e71e50fa7198111b729fdf674e34d.css" integrity="sha256-wS2vJq9AjGTynMmT3Vq0IjNOceUPpxmBEbcp/fZ0400=">
 
-<link rel="stylesheet" href="/css/custom.min.44f76475abc99bc3028656bd061d05d398c1b30eefd8ef829d03d0a85e7e5ff2.css" integrity="sha256-RPdkdavJm8MChla9Bh0F05jBsw7v2O&#43;CnQPQqF5&#43;X/I=">
+<link rel="stylesheet" href="/css/custom.min.a534e31973668ecfda3c859b065aa80371c91d8f02ed0cdc8684f78fa4d02967.css" integrity="sha256-pTTjGXNmjs/aPIWbBlqoA3HJHY8C7QzchoT3j6TQKWc=">
 
-<link rel="stylesheet" href="/css/syntax.min.174c84898cba6753b1e76756faaba89295a9b36f5a52958e027f347103d8575d.css" integrity="sha256-F0yEiYy6Z1Ox52dW&#43;quokpWps29aUpWOAn80cQPYV10=">
+<link rel="stylesheet" href="/css/sidebar.min.ab0aa014e39967c93d8614c12bb7de287363561df9a432264d72f3caa8014b5e.css" integrity="sha256-qwqgFOOZZ8k9hhTBK7feKHNjVh35pDImTXLzyqgBS14=">
+
+<link rel="stylesheet" href="/css/syntax.min.960b5586f436fb10556b930bb3d7720cd46e1fe111908670224cfbc646da0fda.css" integrity="sha256-lgtVhvQ2&#43;xBVa5MLs9dyDNRuH&#43;ERkIZwIkz7xkbaD9o=">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon-180x180.png"><link rel="apple-touch-icon" sizes="152x152" href="/static/apple-touch-icon-152x152.png"><link rel="icon" href="/favicon.ico" type="image/x-icon">
 
@@ -35,8 +37,7 @@
       html.setAttribute('data-color-mode', saved);
     }
   })();
-</script>
-</head>
+</script></head>
 <body>
   <div class="d-flex flex-column min-height-full"><header class="AppHeader">
   <div class="AppHeader-globalBar">
@@ -89,39 +90,87 @@
   <header class="mb-4">
     <h1 class="f1 lh-condensed mb-2">Hugo 入门指南</h1><div class="d-flex flex-items-center color-fg-muted f5 mb-3"><time datetime="2026-06-27T00:00:00Z">
         2026-06-27
-      </time><span class="mx-2">&middot;</span><span>1 分钟阅读</span><span class="mx-2">&middot;</span><span>Hugo</span></div><div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;"><a href="/cn/tags/hugo/" class="topic-tag">hugo</a><a href="/cn/tags/static-site/" class="topic-tag">static-site</a></div><img src="/cn/posts/getting-started-with-hugo/hugo-logo.png" alt="Hugo 入门指南" loading="lazy" class="rounded-2 width-full mb-3" style="max-height: 400px; object-fit: cover;"></header>
+      </time><span class="mx-2">&middot;</span><span>1 分钟阅读</span><span class="mx-2">&middot;</span><span>Hugo</span></div><div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;"><a href="/cn/tags/hugo/" class="topic-tag">Hugo</a><a href="/cn/tags/static-site/" class="topic-tag">静态网站</a></div><img src="/cn/posts/getting-started-with-hugo/hugo-logo.png" alt="Hugo 入门指南" loading="lazy" class="rounded-2 width-full mb-3" style="max-height: 400px; object-fit: cover;"></header>
 
   <div class="markdown-body">
     <p>Hugo 是最受欢迎的开源静态网站生成器之一。凭借其惊人的速度和灵活性，Hugo 让构建网站再次变得充满乐趣。</p>
 <h2 id="安装">安装</h2>
 <p>安装 Hugo 非常简单。在 macOS 上，你可以使用 Homebrew：</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code data-lang="bash"><span style="display:flex;"><span>brew install hugo</span></span></code></pre></div><p>在 Windows 上，你可以使用 Chocolatey：</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code data-lang="bash"><span style="display:flex;"><span>choco install hugo-extended</span></span></code></pre></div><h2 id="创建新站点">创建新站点</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="bash"><span class="line"><span class="cl">brew install hugo</span></span></code></pre></div><p>在 Windows 上，你可以使用 Chocolatey：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="bash"><span class="line"><span class="cl">choco install hugo-extended</span></span></code></pre></div><h2 id="创建新站点">创建新站点</h2>
 <p>安装好 Hugo 后，创建一个新站点非常简单：</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code data-lang="bash"><span style="display:flex;"><span>hugo new site my-blog
-</span></span><span style="display:flex;"><span>cd my-blog</span></span></code></pre></div><h2 id="添加内容">添加内容</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="bash"><span class="line"><span class="cl">hugo new site my-blog
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> my-blog</span></span></code></pre></div><h2 id="添加内容">添加内容</h2>
 <p>创建你的第一篇文章：</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code data-lang="bash"><span style="display:flex;"><span>hugo new posts/my-first-post.md</span></span></code></pre></div><h2 id="运行本地开发服务器">运行本地开发服务器</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="bash"><span class="line"><span class="cl">hugo new posts/my-first-post.md</span></span></code></pre></div><h2 id="运行本地开发服务器">运行本地开发服务器</h2>
 <p>使用以下命令启动开发服务器：</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code data-lang="bash"><span style="display:flex;"><span>hugo server -D</span></span></code></pre></div><p>你的站点将可以通过 <code>http://localhost:1313</code> 进行访问。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="bash"><span class="line"><span class="cl">hugo server -D</span></span></code></pre></div><p>你的站点将可以通过 <code>http://localhost:1313</code> 进行访问。</p>
 <h2 id="生产环境构建">生产环境构建</h2>
 <p>当你准备好发布时，构建你的站点：</p>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code data-lang="bash"><span style="display:flex;"><span>hugo</span></span></code></pre></div><p>输出的静态文件将存放在 <code>public/</code> 目录中。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code data-lang="bash"><span class="line"><span class="cl">hugo</span></span></code></pre></div><p>输出的静态文件将存放在 <code>public/</code> 目录中。</p>
 <h2 id="结语">结语</h2>
 <p>Hugo 是一款功能强大且快速的静态网站生成器。不妨在你的下一个项目中尝试一下吧！</p>
 
   </div><div class="border-top pt-4 mt-4 share-block" data-share-root data-share-url="http://localhost:1313/cn/posts/getting-started-with-hugo/" data-share-title="Hugo 入门指南" data-share-copy-success="链接已复制。" data-share-copy-failure="复制失败，请手动复制这个链接：">
   <style>
+    .share-block {
+      --share-button-bg: var(--button-default-bgColor, var(--bgColor-muted, #f6f8fa));
+      --share-button-fg: var(--fgColor-default, #1f2328);
+      --share-border: var(--borderColor-default, #d0d7de);
+      --share-border-strong: var(--borderColor-muted, #afb8c1);
+      --share-muted: var(--fgColor-muted, #57606a);
+      --share-icon-fg: var(--share-muted);
+      --share-panel-bg: var(--bgColor-muted, #f6f8fa);
+      --share-surface-bg: var(--bgColor-default, #ffffff);
+      --share-badge-bg: var(--neutral-muted, rgba(175, 184, 193, 0.2));
+      --share-accent: var(--accent-fgColor, #0969da);
+      --share-accent-ring: color-mix(in srgb, var(--accent-fgColor, #0969da) 14%, transparent);
+      --share-accent-subtle: var(--accent-subtle, rgba(9, 105, 218, 0.12));
+    }
+
+    html[data-color-mode="dark"] .share-block,
+    html[data-dark-theme="dark"][data-color-mode="auto"] .share-block {
+      --share-button-bg: var(--button-default-bgColor, #212830);
+      --share-button-fg: var(--fgColor-default, #f0f6fc);
+      --share-border: var(--borderColor-default, #3d444d);
+      --share-border-strong: var(--borderColor-muted, #656c76);
+      --share-muted: var(--fgColor-muted, #9198a1);
+      --share-icon-fg: var(--fgColor-default, #dce6f2);
+      --share-panel-bg: var(--bgColor-muted, #161b22);
+      --share-surface-bg: var(--bgColor-default, #0d1117);
+      --share-badge-bg: var(--neutral-muted, rgba(110, 118, 129, 0.34));
+      --share-accent: var(--accent-fgColor, #4493f8);
+      --share-accent-ring: color-mix(in srgb, var(--accent-fgColor, #4493f8) 18%, transparent);
+      --share-accent-subtle: var(--accent-subtle, rgba(56, 139, 253, 0.18));
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html[data-color-mode="auto"] .share-block {
+        --share-button-bg: var(--button-default-bgColor, #212830);
+        --share-button-fg: var(--fgColor-default, #f0f6fc);
+        --share-border: var(--borderColor-default, #3d444d);
+        --share-border-strong: var(--borderColor-muted, #656c76);
+        --share-muted: var(--fgColor-muted, #9198a1);
+        --share-icon-fg: var(--fgColor-default, #dce6f2);
+        --share-panel-bg: var(--bgColor-muted, #161b22);
+        --share-surface-bg: var(--bgColor-default, #0d1117);
+        --share-badge-bg: var(--neutral-muted, rgba(110, 118, 129, 0.34));
+        --share-accent: var(--accent-fgColor, #4493f8);
+        --share-accent-ring: color-mix(in srgb, var(--accent-fgColor, #4493f8) 18%, transparent);
+        --share-accent-subtle: var(--accent-subtle, rgba(56, 139, 253, 0.18));
+      }
+    }
+
     .share-block .share-actions {
       gap: 0.5rem;
     }
 
     .share-block .share-button {
       align-items: center;
-      background: var(--color-btn-bg, #f6f8fa);
-      border: 1px solid var(--color-border-default, #d0d7de);
+      background: var(--share-button-bg);
+      border: 1px solid var(--share-border);
       border-radius: 999px;
-      color: var(--color-fg-default, #1f2328);
+      color: var(--share-button-fg);
       display: inline-flex;
       gap: 0.35rem;
       justify-content: center;
@@ -131,9 +180,9 @@
 
     .share-block .share-button:hover,
     .share-block .share-button:focus-visible {
-      background: var(--color-canvas-subtle, #f6f8fa);
-      border-color: var(--color-accent-emphasis, #0969da);
-      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent-emphasis, #0969da) 14%, transparent);
+      background: var(--share-panel-bg);
+      border-color: var(--share-accent);
+      box-shadow: 0 0 0 3px var(--share-accent-ring);
       text-decoration: none;
       transform: translateY(-1px);
     }
@@ -149,10 +198,10 @@
 
     .share-block .share-icon-badge {
       align-items: center;
-      background: var(--color-neutral-subtle, rgba(175, 184, 193, 0.2));
-      border: 1px solid color-mix(in srgb, var(--color-border-default, #d0d7de) 75%, transparent);
+      background: var(--share-badge-bg);
+      border: 1px solid color-mix(in srgb, var(--share-border-strong) 75%, transparent);
       border-radius: 0.55rem;
-      color: var(--color-fg-muted, #57606a);
+      color: var(--share-icon-fg);
       display: inline-flex;
       height: 1.65rem;
       justify-content: center;
@@ -173,21 +222,26 @@
       width: 1.12rem;
     }
 
-    .share-block .share-icon--linkedin svg {
-      height: 0.92rem;
-      width: 0.92rem;
-    }
-
-    .share-block .share-icon--telegram svg {
-      height: 0.88rem;
-      transform: translateX(-0.02rem);
-      width: 0.88rem;
+    .share-block .share-icon--reddit svg {
+      height: 1.08rem;
+      width: 1.08rem;
     }
 
     .share-block .share-button:hover .share-icon-badge,
     .share-block .share-button:focus-visible .share-icon-badge {
-      background: color-mix(in srgb, var(--color-accent-subtle, rgba(9, 105, 218, 0.1)) 88%, white);
-      color: var(--color-accent-fg, #0969da);
+      background: var(--share-accent-subtle);
+      color: var(--share-accent);
+    }
+
+    html[data-color-mode="dark"] .share-block .share-icon-badge,
+    html[data-dark-theme="dark"][data-color-mode="auto"] .share-block .share-icon-badge {
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--share-border-strong) 38%, transparent);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html[data-color-mode="auto"] .share-block .share-icon-badge {
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--share-border-strong) 38%, transparent);
+      }
     }
 
     .share-block .share-button span:last-child {
@@ -195,8 +249,8 @@
     }
 
     .share-block .share-panel {
-      background: var(--color-canvas-subtle, #f6f8fa);
-      border: 1px solid var(--color-border-default, #d0d7de);
+      background: var(--share-panel-bg);
+      border: 1px solid var(--share-border);
       border-radius: 0.5rem;
       margin-top: 0.75rem;
       max-width: 26rem;
@@ -214,15 +268,15 @@
     }
 
     .share-block .share-panel-text {
-      color: var(--color-fg-muted, #57606a);
+      color: var(--share-muted);
       font-size: 0.875rem;
       margin-bottom: 0.75rem;
     }
 
     .share-block .share-qr-frame {
       align-items: center;
-      background: #fff;
-      border: 1px solid var(--color-border-default, #d0d7de);
+      background: var(--share-surface-bg);
+      border: 1px solid var(--share-border);
       border-radius: 0.5rem;
       display: inline-flex;
       justify-content: center;
@@ -238,7 +292,7 @@
     }
 
     .share-block .share-feedback {
-      color: var(--color-fg-muted, #57606a);
+      color: var(--share-muted);
       font-size: 0.875rem;
       margin-top: 0.75rem;
       min-height: 1.25rem;
@@ -426,14 +480,17 @@
   });
 })();
 </script><nav class="border-top pt-4 mt-4">
-    <div class="d-flex flex-justify-between"><span></span></div>
-  </nav>
-</article>
+    <div class="d-flex flex-justify-between"><a href="/cn/posts/gfm-demo/" class="Link--secondary">
+        &larr; GitHub Flavored Markdown Demo
+      </a></div>
+  </nav></article>
           </div>
           <div class="Layout-sidebar"><aside><div class="color-bg-subtle rounded-2 p-3 mb-3">
   <h3 class="h5 mb-2">关于我</h3>
   <div class="d-flex flex-items-center mb-2">
-    <img src="https://www.q1w264.com/images/logo.png" alt="Author" class="avatar avatar-6 mr-2" width="48" height="48">
+    <a href="/cn/about/" aria-label="关于我">
+      <img src="/images/logo.png" alt="Author" class="avatar avatar-6 mr-2" width="48" height="48">
+    </a>
     <div>
       <strong class="d-block">q1w264</strong>
       <span class="f6 color-fg-muted">开发者 &amp; 学生</span>
@@ -459,8 +516,12 @@
 </div><div class="color-bg-subtle rounded-2 p-3 mb-3">
   <h3 class="h5 mb-2">分类</h3>
   <ul class="list-style-none"><li class="mb-1">
+      <a href="/cn/categories/documentation/" class="Link--secondary">
+        文档 <span class="Counter Counter--secondary ml-1">1</span>
+      </a>
+    </li><li class="mb-1">
       <a href="/cn/categories/tutorial/" class="Link--secondary">
-        tutorial <span class="Counter Counter--secondary ml-1">1</span>
+        教程 <span class="Counter Counter--secondary ml-1">1</span>
       </a>
     </li></ul>
 </div><div class="color-bg-subtle rounded-2 p-3 mb-3">
@@ -468,6 +529,9 @@
   <ul class="list-style-none"><li class="mb-2">
       <a href="/cn/posts/getting-started-with-hugo/" class="Link--primary">Hugo 入门指南</a><span class="color-fg-muted f6 d-block">
         2026-06-27
+      </span></li><li class="mb-2">
+      <a href="/cn/posts/gfm-demo/" class="Link--primary">GitHub Flavored Markdown Demo</a><span class="color-fg-muted f6 d-block">
+        2024-01-20
       </span></li></ul>
 </div><div class="color-bg-subtle rounded-2 p-3 mb-3">
   <h3 class="h5 mb-2">
@@ -478,11 +542,7 @@
     data-view-all="/cn/tags/"
     data-label-more="显示更多"
     data-label-less="显示更少"
-    data-label-view-all="查看全部"><a href="/cn/tags/hugo/" class="topic-tag">
-      hugo
-    </a><a href="/cn/tags/static-site/" class="topic-tag">
-      static-site
-    </a></div>
+    data-label-view-all="查看全部"><a href="/cn/tags/demo/" class="topic-tag">示例</a><a href="/cn/tags/gfm/" class="topic-tag">GFM</a><a href="/cn/tags/hugo/" class="topic-tag">Hugo</a><a href="/cn/tags/markdown/" class="topic-tag">Markdown</a><a href="/cn/tags/static-site/" class="topic-tag">静态网站</a></div>
 </div></aside></div>
         </div></div>
     </main><footer class="color-bg-subtle border-top py-6 mt-6">

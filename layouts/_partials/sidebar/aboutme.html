@@ -1,7 +1,9 @@
 <div class="color-bg-subtle rounded-2 p-3 mb-3">
   <h3 class="h5 mb-2">{{ i18n "aboutMe" | default "About Me" }}</h3>
   <div class="d-flex flex-items-center mb-2">
-    <img src="https://www.q1w264.com/images/logo.png" alt="Author" class="avatar avatar-6 mr-2" width="48" height="48">
+    <a href="{{ "/about/" | relLangURL }}" aria-label="{{ i18n "aboutMe" | default "About Me" }}">
+      <img src="{{ site.Params.avatar | default "images/logo.png" | relURL }}" alt="Author" class="avatar avatar-6 mr-2" width="48" height="48">
+    </a>
     <div>
       <strong class="d-block">{{ site.Params.author | default "q1w264" }}</strong>
       <span class="f6 color-fg-muted">{{ i18n "authorRole" | default "Developer & Student" }}</span>
