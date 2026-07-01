@@ -22,16 +22,64 @@
 
 <div class="border-top pt-4 mt-4 share-block" data-share-root data-share-url="{{ $page.Permalink }}" data-share-title="{{ $page.Title }}" data-share-copy-success="{{ i18n "shareCopySuccess" | default "Link copied." }}" data-share-copy-failure="{{ i18n "shareCopyFailure" | default "Copy failed. Please copy the link manually." }}">
   <style>
+    .share-block {
+      --share-button-bg: var(--button-default-bgColor, var(--bgColor-muted, #f6f8fa));
+      --share-button-fg: var(--fgColor-default, #1f2328);
+      --share-border: var(--borderColor-default, #d0d7de);
+      --share-border-strong: var(--borderColor-muted, #afb8c1);
+      --share-muted: var(--fgColor-muted, #57606a);
+      --share-icon-fg: var(--share-muted);
+      --share-panel-bg: var(--bgColor-muted, #f6f8fa);
+      --share-surface-bg: var(--bgColor-default, #ffffff);
+      --share-badge-bg: var(--neutral-muted, rgba(175, 184, 193, 0.2));
+      --share-accent: var(--accent-fgColor, #0969da);
+      --share-accent-ring: color-mix(in srgb, var(--accent-fgColor, #0969da) 14%, transparent);
+      --share-accent-subtle: var(--accent-subtle, rgba(9, 105, 218, 0.12));
+    }
+
+    html[data-color-mode="dark"] .share-block,
+    html[data-dark-theme="dark"][data-color-mode="auto"] .share-block {
+      --share-button-bg: var(--button-default-bgColor, #212830);
+      --share-button-fg: var(--fgColor-default, #f0f6fc);
+      --share-border: var(--borderColor-default, #3d444d);
+      --share-border-strong: var(--borderColor-muted, #656c76);
+      --share-muted: var(--fgColor-muted, #9198a1);
+      --share-icon-fg: var(--fgColor-default, #dce6f2);
+      --share-panel-bg: var(--bgColor-muted, #161b22);
+      --share-surface-bg: var(--bgColor-default, #0d1117);
+      --share-badge-bg: var(--neutral-muted, rgba(110, 118, 129, 0.34));
+      --share-accent: var(--accent-fgColor, #4493f8);
+      --share-accent-ring: color-mix(in srgb, var(--accent-fgColor, #4493f8) 18%, transparent);
+      --share-accent-subtle: var(--accent-subtle, rgba(56, 139, 253, 0.18));
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html[data-color-mode="auto"] .share-block {
+        --share-button-bg: var(--button-default-bgColor, #212830);
+        --share-button-fg: var(--fgColor-default, #f0f6fc);
+        --share-border: var(--borderColor-default, #3d444d);
+        --share-border-strong: var(--borderColor-muted, #656c76);
+        --share-muted: var(--fgColor-muted, #9198a1);
+        --share-icon-fg: var(--fgColor-default, #dce6f2);
+        --share-panel-bg: var(--bgColor-muted, #161b22);
+        --share-surface-bg: var(--bgColor-default, #0d1117);
+        --share-badge-bg: var(--neutral-muted, rgba(110, 118, 129, 0.34));
+        --share-accent: var(--accent-fgColor, #4493f8);
+        --share-accent-ring: color-mix(in srgb, var(--accent-fgColor, #4493f8) 18%, transparent);
+        --share-accent-subtle: var(--accent-subtle, rgba(56, 139, 253, 0.18));
+      }
+    }
+
     .share-block .share-actions {
       gap: 0.5rem;
     }
 
     .share-block .share-button {
       align-items: center;
-      background: var(--color-btn-bg, #f6f8fa);
-      border: 1px solid var(--color-border-default, #d0d7de);
+      background: var(--share-button-bg);
+      border: 1px solid var(--share-border);
       border-radius: 999px;
-      color: var(--color-fg-default, #1f2328);
+      color: var(--share-button-fg);
       display: inline-flex;
       gap: 0.35rem;
       justify-content: center;
@@ -41,9 +89,9 @@
 
     .share-block .share-button:hover,
     .share-block .share-button:focus-visible {
-      background: var(--color-canvas-subtle, #f6f8fa);
-      border-color: var(--color-accent-emphasis, #0969da);
-      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent-emphasis, #0969da) 14%, transparent);
+      background: var(--share-panel-bg);
+      border-color: var(--share-accent);
+      box-shadow: 0 0 0 3px var(--share-accent-ring);
       text-decoration: none;
       transform: translateY(-1px);
     }
@@ -59,10 +107,10 @@
 
     .share-block .share-icon-badge {
       align-items: center;
-      background: var(--color-neutral-subtle, rgba(175, 184, 193, 0.2));
-      border: 1px solid color-mix(in srgb, var(--color-border-default, #d0d7de) 75%, transparent);
+      background: var(--share-badge-bg);
+      border: 1px solid color-mix(in srgb, var(--share-border-strong) 75%, transparent);
       border-radius: 0.55rem;
-      color: var(--color-fg-muted, #57606a);
+      color: var(--share-icon-fg);
       display: inline-flex;
       height: 1.65rem;
       justify-content: center;
@@ -83,21 +131,26 @@
       width: 1.12rem;
     }
 
-    .share-block .share-icon--linkedin svg {
-      height: 0.92rem;
-      width: 0.92rem;
-    }
-
-    .share-block .share-icon--telegram svg {
-      height: 0.88rem;
-      transform: translateX(-0.02rem);
-      width: 0.88rem;
+    .share-block .share-icon--reddit svg {
+      height: 1.08rem;
+      width: 1.08rem;
     }
 
     .share-block .share-button:hover .share-icon-badge,
     .share-block .share-button:focus-visible .share-icon-badge {
-      background: color-mix(in srgb, var(--color-accent-subtle, rgba(9, 105, 218, 0.1)) 88%, white);
-      color: var(--color-accent-fg, #0969da);
+      background: var(--share-accent-subtle);
+      color: var(--share-accent);
+    }
+
+    html[data-color-mode="dark"] .share-block .share-icon-badge,
+    html[data-dark-theme="dark"][data-color-mode="auto"] .share-block .share-icon-badge {
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--share-border-strong) 38%, transparent);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html[data-color-mode="auto"] .share-block .share-icon-badge {
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--share-border-strong) 38%, transparent);
+      }
     }
 
     .share-block .share-button span:last-child {
@@ -105,8 +158,8 @@
     }
 
     .share-block .share-panel {
-      background: var(--color-canvas-subtle, #f6f8fa);
-      border: 1px solid var(--color-border-default, #d0d7de);
+      background: var(--share-panel-bg);
+      border: 1px solid var(--share-border);
       border-radius: 0.5rem;
       margin-top: 0.75rem;
       max-width: 26rem;
@@ -124,15 +177,15 @@
     }
 
     .share-block .share-panel-text {
-      color: var(--color-fg-muted, #57606a);
+      color: var(--share-muted);
       font-size: 0.875rem;
       margin-bottom: 0.75rem;
     }
 
     .share-block .share-qr-frame {
       align-items: center;
-      background: #fff;
-      border: 1px solid var(--color-border-default, #d0d7de);
+      background: var(--share-surface-bg);
+      border: 1px solid var(--share-border);
       border-radius: 0.5rem;
       display: inline-flex;
       justify-content: center;
@@ -148,7 +201,7 @@
     }
 
     .share-block .share-feedback {
-      color: var(--color-fg-muted, #57606a);
+      color: var(--share-muted);
       font-size: 0.875rem;
       margin-top: 0.75rem;
       min-height: 1.25rem;

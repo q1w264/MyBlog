@@ -26,7 +26,7 @@
     {{- with .Params.tags -}}
     <div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;">
       {{- range . -}}
-      <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/" class="topic-tag">{{ . }}</a>
+      <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/" class="topic-tag">{{ partial "tag-label.html" . }}</a>
       {{- end -}}
     </div>
     {{- end -}}
@@ -40,10 +40,11 @@
     {{ .Content }}
   </div>
 
-  {{- if site.Params.showShareButtons -}}
+  {{- if and site.Params.showShareButtons (ne .Params.hideShareButtons true) -}}
   {{- partial "share.html" . -}}
   {{- end -}}
 
+  {{- if ne .Params.hideRelatedPosts true -}}
   {{- $related := .Site.RegularPages.Related . | first 3 -}}
   {{- with $related -}}
   <div class="border-top pt-4 mt-4">
@@ -62,9 +63,13 @@
     </div>
   </div>
   {{- end -}}
+  {{- end -}}
 
+  {{- if ne .Params.hideComments true -}}
   {{- partial "giscus.html" . -}}
+  {{- end -}}
 
+  {{- if ne .Params.hidePrevNext true -}}
   <nav class="border-top pt-4 mt-4">
     <div class="d-flex flex-justify-between">
       {{- with .PrevInSection -}}
@@ -81,5 +86,6 @@
       {{- end -}}
     </div>
   </nav>
+  {{- end -}}
 </article>
 {{- end -}}

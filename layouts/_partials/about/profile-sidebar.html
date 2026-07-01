@@ -1,0 +1,121 @@
+{{- $profilePosts := where .Site.RegularPages "Section" "posts" -}}
+{{- $postCount := len $profilePosts -}}
+{{- $tagCount := len .Site.Taxonomies.tags -}}
+{{- $wordCount := 0 -}}
+{{- $readingMinutes := 0 -}}
+{{- $totalContrib := 0 -}}
+{{- $heatmapDays := 60 -}}
+{{- range $profilePosts -}}
+  {{- $wordCount = add $wordCount .WordCount -}}
+  {{- $readingMinutes = add $readingMinutes .ReadingTime -}}
+{{- end -}}
+{{- $maxContrib := 0 -}}
+{{- range seq 0 (sub $heatmapDays 1) -}}
+  {{- $day := now.AddDate 0 0 (mul -1 (sub (sub $heatmapDays 1) .)) -}}
+  {{- $dayKey := $day.Format "2006-01-02" -}}
+  {{- $count := 0 -}}
+  {{- range $profilePosts -}}
+    {{- if eq (.Date.Format "2006-01-02") $dayKey -}}
+      {{- $count = add $count 1 -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $totalContrib = add $totalContrib $count -}}
+  {{- if gt $count $maxContrib -}}
+    {{- $maxContrib = $count -}}
+  {{- end -}}
+{{- end -}}
+{{- $location := .Params.location -}}
+{{- $bio := .Params.bio | default (i18n "authorBio" | default "Welcome to my blog!") -}}
+{{- $aboutName := site.Params.aboutName | default "Shilong Yuan" -}}
+{{- $aboutUsername := site.Params.social.github | default "q1w264" -}}
+
+<aside class="Layout-sidebar">
+  <div class="d-flex flex-column gap-3 about-profile-sidebar">
+    <div class="about-profile-card">
+      <div class="about-profile-hero">
+        <div class="about-profile-avatarColumn">
+          <img src="{{ site.Params.avatar | default "images/logo.png" | relURL }}" alt="{{ $aboutName }}" class="about-profile-avatar" width="256" height="256">
+        </div>
+        <div class="about-profile-heroText">
+          <div class="about-profile-identity">
+            <h1 class="h3 mb-0 about-profile-name">{{ $aboutName }}</h1>
+            <p class="f5 color-fg-muted mb-0 about-profile-username">@{{ $aboutUsername }}</p>
+            <div class="about-profile-miniStats" aria-label="{{ i18n "profileStats" | default "Profile Stats" }}">
+              <span class="about-miniStat">
+                <span class="about-miniStatIcon">{{ partial "about/icon.html" (dict "name" "article") }}</span>
+                <span class="about-miniStatText"><strong class="about-miniStatNumber">{{ $postCount }}</strong> {{ i18n "articles" | default "Articles" }}</span>
+              </span>
+              <span class="about-miniStat">
+                <span class="about-miniStatIcon">{{ partial "about/icon.html" (dict "name" "word") }}</span>
+                <span class="about-miniStatText"><strong class="about-miniStatNumber">{{ $wordCount }}</strong> {{ i18n "words" | default "Words" }}</span>
+              </span>
+            </div>
+
+            <div class="about-section-divider"></div>
+
+            <p class="f6 color-fg-muted mb-0 about-profile-bio">{{ $bio }}</p>
+          </div>
+
+          <div class="about-section-divider"></div>
+
+          <div class="about-profile-contact">
+            <div class="about-profile-linkRow">
+              <span class="about-profile-linkIcon">{{ partial "about/icon.html" (dict "name" "location") }}</span>
+              <span class="about-profile-linkText">{{ with $location }}{{ . }}{{ else }}China{{ end }}</span>
+            </div>
+            <div class="about-profile-linkRow">
+              <span class="about-profile-linkIcon">{{ partial "about/icon.html" (dict "name" "mail") }}</span>
+              <a href="mailto:{{ site.Params.email }}" class="about-profile-linkText">{{ site.Params.email }}</a>
+            </div>
+            {{- with site.Params.social.github -}}
+            <div class="about-profile-linkRow">
+              <span class="about-profile-linkIcon">{{ partial "about/icon.html" (dict "name" "github") }}</span>
+              <a href="https://github.com/{{ . }}" class="about-profile-linkText" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            {{- end -}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-section-divider"></div>
+
+    <div class="about-contrib-card">
+      <div class="about-section-heading">
+        <div>
+          <h2 class="f5 mb-0">{{ i18n "activityHeatmap" | default "Activity Heatmap" }}</h2>
+          <p class="f6 color-fg-muted mb-0">{{ $totalContrib }} {{ i18n "contributionsInLast60Days" | default "contributions in the last 60 days" }}</p>
+        </div>
+      </div>
+      <div class="about-contrib-scroll">
+        <div class="about-contrib-grid" aria-label="{{ i18n "activityHeatmap" | default "Activity Heatmap" }}">
+          {{- range seq 0 (sub $heatmapDays 1) -}}
+          {{- $day := now.AddDate 0 0 (mul -1 (sub (sub $heatmapDays 1) .)) -}}
+          {{- $dayKey := $day.Format "2006-01-02" -}}
+          {{- $count := 0 -}}
+          {{- range $profilePosts -}}
+            {{- if eq (.Date.Format "2006-01-02") $dayKey -}}
+              {{- $count = add $count 1 -}}
+            {{- end -}}
+          {{- end -}}
+          {{- $color := "about-contrib-cell--0" -}}
+          {{- if gt $count 0 -}}
+            {{- $activityBase := cond (gt $maxContrib 0) $maxContrib 1 -}}
+            {{- $scaled := div (mul (mul $count $count) 100) (mul $activityBase $activityBase) -}}
+            {{- if le $scaled 8 -}}
+              {{- $color = "about-contrib-cell--1" -}}
+            {{- else if le $scaled 28 -}}
+              {{- $color = "about-contrib-cell--2" -}}
+            {{- else if le $scaled 58 -}}
+              {{- $color = "about-contrib-cell--3" -}}
+            {{- else -}}
+              {{- $color = "about-contrib-cell--4" -}}
+            {{- end -}}
+          {{- end -}}
+          <span class="about-contrib-cell {{ $color }}" title="{{ $dayKey }} · {{ $count }}"></span>
+          {{- end -}}
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

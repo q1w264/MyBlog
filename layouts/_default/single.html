@@ -1,4 +1,62 @@
 {{- define "main" -}}
+{{- if .Params.hideSidebar -}}
+<div class="Layout Layout--sidebarPosition-start Layout--flowRow-until-md">
+  {{- partial "about/profile-sidebar.html" . -}}
+  <div class="Layout-main">
+    <div class="markdown-body">
+      {{ .Content }}
+    </div>
+
+    {{- if and site.Params.showShareButtons (ne .Params.hideShareButtons true) -}}
+    {{- partial "share.html" . -}}
+    {{- end -}}
+
+    {{- if ne .Params.hideRelatedPosts true -}}
+    {{- $related := .Site.RegularPages.Related . | first 3 -}}
+    {{- with $related -}}
+    <div class="border-top pt-4 mt-4">
+      <h2 class="f4 mb-3">{{ i18n "relatedPosts" | default "Related Posts" }}</h2>
+      <div class="d-flex flex-column flex-md-row">
+        {{- range . -}}
+        <div class="flex-1 mb-3 mb-md-0 mr-md-3">
+          <a href="{{ .RelPermalink }}" class="Link--primary text-bold">{{ .Title }}</a>
+          {{- if not .Date.IsZero -}}
+          <p class="color-fg-muted f6 mb-0">
+            {{ .Date.Format (site.Params.dateFormat | default "2006-01-02") }}
+          </p>
+          {{- end -}}
+        </div>
+        {{- end -}}
+      </div>
+    </div>
+    {{- end -}}
+    {{- end -}}
+
+    {{- if ne .Params.hideComments true -}}
+    {{- partial "giscus.html" . -}}
+    {{- end -}}
+
+    {{- if ne .Params.hidePrevNext true -}}
+    <nav class="border-top pt-4 mt-4">
+      <div class="d-flex flex-justify-between">
+        {{- with .PrevInSection -}}
+        <a href="{{ .RelPermalink }}" class="Link--secondary">
+          &larr; {{ .Title | truncate 40 }}
+        </a>
+        {{- else -}}
+        <span></span>
+        {{- end -}}
+        {{- with .NextInSection -}}
+        <a href="{{ .RelPermalink }}" class="Link--secondary">
+          {{ .Title | truncate 40 }} &rarr;
+        </a>
+        {{- end -}}
+      </div>
+    </nav>
+    {{- end -}}
+  </div>
+</div>
+{{- else -}}
 <article>
   <header class="mb-4">
     <h1 class="f1 lh-condensed mb-2">{{ .Title }}</h1>
@@ -26,7 +84,7 @@
     {{- with .Params.tags -}}
     <div class="d-flex flex-wrap mb-3" style="gap: 0.5rem;">
       {{- range . -}}
-      <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/" class="topic-tag">{{ . }}</a>
+      <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/" class="topic-tag">{{ partial "tag-label.html" . }}</a>
       {{- end -}}
     </div>
     {{- end -}}
@@ -40,10 +98,11 @@
     {{ .Content }}
   </div>
 
-  {{- if site.Params.showShareButtons -}}
+  {{- if and site.Params.showShareButtons (ne .Params.hideShareButtons true) -}}
   {{- partial "share.html" . -}}
   {{- end -}}
 
+  {{- if ne .Params.hideRelatedPosts true -}}
   {{- $related := .Site.RegularPages.Related . | first 3 -}}
   {{- with $related -}}
   <div class="border-top pt-4 mt-4">
@@ -62,9 +121,13 @@
     </div>
   </div>
   {{- end -}}
+  {{- end -}}
 
+  {{- if ne .Params.hideComments true -}}
   {{- partial "giscus.html" . -}}
+  {{- end -}}
 
+  {{- if ne .Params.hidePrevNext true -}}
   <nav class="border-top pt-4 mt-4">
     <div class="d-flex flex-justify-between">
       {{- with .PrevInSection -}}
@@ -81,5 +144,7 @@
       {{- end -}}
     </div>
   </nav>
+  {{- end -}}
 </article>
+{{- end -}}
 {{- end -}}

@@ -2,6 +2,11 @@
 title: "Shilong Yuan (q1w264)"
 draft: false
 hideReadingTime: true
+hideSidebar: true
+hideShareButtons: true
+hideRelatedPosts: true
+hideComments: true
+hidePrevNext: true
 ogp:
   og:
     type: profile
@@ -12,11 +17,34 @@ ogp:
     gender: male
 build:
   list: "local"
+location: "China"
+website: "https://www.q1w264.com"
+joined: 2024-01-01
+bio: "I build pages, workflows, and writing systems that stay readable and useful over time."
 ---
-![GitHub followers](https://img.shields.io/github/followers/q1w264)
-![GitHub User's stars](https://img.shields.io/github/stars/q1w264)
-## 📫 Let's Connect!
-If you're interested in my projects, or just want to have a casual chat, feel free to reach out:
+## About Me
 
-* **Email**: shilong.yuan@q1w264.com
-* **GitHub**: [@q1w264](https://github.com/q1w264)
+I turn ideas into pages, workflows, and content that can stay readable over time.
+This blog is where I write about Hugo, Markdown, frontend templates, and practical engineering notes.
+
+## What I Work On
+
+- Building lighter and clearer site structure with Hugo and Go templates.
+- Writing content with less noise and more signal.
+- Keeping the Chinese and English versions aligned.
+
+## What I Care About
+
+- Simple but durable layouts.
+- Clear documentation and content structure.
+- Templates and components that are predictable to use.
+
+## Toolbox
+
+`Hugo` · `Markdown` · `Go templates` · `HTML/CSS` · `JavaScript` · `Git`
+
+## Now
+
+- Refactoring how this blog presents itself.
+- Curating a set of notes that are easy to reuse.
+- Making the page feel better on both desktop and mobile.
