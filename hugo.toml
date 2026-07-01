@@ -49,6 +49,24 @@ cn = "简体中文"
 en = "en-US"
 cn = "zh-CN"
 
+# giscus comment system
+# Steps to activate:
+#   1. Go to https://github.com/q1w264/MyBlog/discussions → Manage categories → New category
+#      Name: "Comments", type: "Announcement"
+#   2. Visit https://giscus.app, select repo q1w264/MyBlog and the Comments category,
+#      then copy the generated categoryID (DIC_...) and paste it below.
+[params.giscus]
+  enable           = true
+  repoID           = "R_kgDOQ-lMpQ"
+  category         = "Comments"
+  categoryID       = "DIC_kwDOQ-lMpc4DARnw"
+  mapping          = "pathname"
+  strict           = "0"
+  reactionsEnabled = "1"
+  emitMetadata     = "0"
+  inputPosition    = "bottom"
+  loading          = "lazy"
+
 # Custom favicon (optional)
 faviconIco = "static/favicon.ico"
 faviconPng = "static/favicon.png"
