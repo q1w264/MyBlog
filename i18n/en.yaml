@@ -26,6 +26,14 @@ minRead: "min read"
 
 # Share
 share: "Share"
+shareX: "X"
+shareLinkedIn: "LinkedIn"
+shareFacebook: "Facebook"
+shareReddit: "Reddit"
+shareTelegram: "Telegram"
+shareCopyLink: "Copy link"
+shareCopySuccess: "Link copied."
+shareCopyFailure: "Copy failed. Please copy this link manually:"
 
 # Pagination
 pagination: "Pagination"
