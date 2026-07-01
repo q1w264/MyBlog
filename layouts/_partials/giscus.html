@@ -1,0 +1,57 @@
+{{- $giscus := site.Params.giscus -}}
+{{- if and $giscus.enable .IsPage -}}
+
+{{- /* Map Hugo language codes to giscus UI language codes */ -}}
+{{- $langMap := dict "cn" "zh-CN" "en" "en" -}}
+{{- $giscusLang := index $langMap site.Language.Lang | default site.Language.Lang -}}
+
+<div class="border-top pt-4 mt-4">
+  <h2 class="f4 mb-3">{{ i18n "comments" | default "Comments" }}</h2>
+  <div id="giscus-container"></div>
+</div>
+
+<script>
+(function () {
+  function getGiscusTheme() {
+    var mode = document.documentElement.getAttribute('data-color-mode');
+    if (mode === 'dark') return 'dark';
+    if (mode === 'light') return 'light';
+    return 'preferred_color_scheme';
+  }
+
+  // Dynamically create giscus script with the correct initial theme
+  var script = document.createElement('script');
+  script.src = 'https://giscus.app/client.js';
+  script.setAttribute('data-repo', 'q1w264/MyBlog');
+  script.setAttribute('data-repo-id', '{{ $giscus.repoID }}');
+  script.setAttribute('data-category', '{{ $giscus.category | default "Comments" }}');
+  script.setAttribute('data-category-id', '{{ $giscus.categoryID }}');
+  script.setAttribute('data-mapping', '{{ $giscus.mapping | default "pathname" }}');
+  script.setAttribute('data-strict', '{{ $giscus.strict | default "0" }}');
+  script.setAttribute('data-reactions-enabled', '{{ $giscus.reactionsEnabled | default "1" }}');
+  script.setAttribute('data-emit-metadata', '{{ $giscus.emitMetadata | default "0" }}');
+  script.setAttribute('data-input-position', '{{ $giscus.inputPosition | default "bottom" }}');
+  script.setAttribute('data-theme', getGiscusTheme());
+  script.setAttribute('data-lang', '{{ $giscusLang }}');
+  script.setAttribute('data-loading', '{{ $giscus.loading | default "lazy" }}');
+  script.setAttribute('crossorigin', 'anonymous');
+  script.async = true;
+  document.getElementById('giscus-container').appendChild(script);
+
+  // Keep giscus theme in sync when the blog theme is toggled
+  var observer = new MutationObserver(function () {
+    var iframe = document.querySelector('iframe.giscus-frame');
+    if (iframe) {
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: getGiscusTheme() } } },
+        'https://giscus.app'
+      );
+    }
+  });
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-color-mode']
+  });
+})();
+</script>
+{{- end -}}
