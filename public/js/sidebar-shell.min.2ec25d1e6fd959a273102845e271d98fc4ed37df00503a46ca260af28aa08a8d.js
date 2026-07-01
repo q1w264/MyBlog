@@ -1,1 +1,0 @@
-(function(){"use strict";var e=window.matchMedia("(min-width: 768px)");function n(t){t.open=e.matches}function t(){document.querySelectorAll("[data-sidebar-shell]").forEach(n)}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",t):t(),e.addEventListener?e.addEventListener("change",t):e.addListener(t)})()

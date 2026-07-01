@@ -1,0 +1,10 @@
+<footer class="site-footer border-top mt-6" role="contentinfo">
+  <div class="container-xl px-3 px-md-4 px-lg-5">
+    <div class="site-footer-main text-center">
+      <p class="site-footer-copyright color-fg-muted mb-0">
+        &copy; {{ now.Year }} {{ .Site.Title }}.
+        {{- with .Site.Params.copyright }} {{ . | markdownify }}{{ end -}}
+      </p>
+    </div>
+  </div>
+</footer>

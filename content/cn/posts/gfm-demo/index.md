@@ -1,7 +1,7 @@
 ---
 title: "GitHub Flavored Markdown Demo"
 date: 2024-01-20
-draft: ture
+draft: true
 tags: ["demo", "markdown", "gfm"]
 archives: ["2024-01"]
 categories: ["documentation"]
