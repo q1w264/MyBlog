@@ -41,6 +41,10 @@ partial = "archive"
 [params.social]
 github = "q1w264"
 
+[params.languageLabels]
+en = "English"
+cn = "简体中文"
+
 # Custom favicon (optional)
 faviconIco = "static/favicon.ico"
 faviconPng = "static/favicon.png"
