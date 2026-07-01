@@ -1,0 +1,302 @@
+{{- $page := . -}}
+{{- $isCn := eq $page.Site.Language.Lang "cn" -}}
+{{- $shareUrl := $page.Permalink | urlquery -}}
+{{- $shareTitle := $page.Title | urlquery -}}
+{{- $platforms := slice -}}
+{{- if $isCn -}}
+  {{- $platforms = $platforms
+    | append (dict "id" "wechat" "labelKey" "shareWechat" "kind" "button")
+    | append (dict "id" "weibo" "labelKey" "shareWeibo" "href" (printf "https://service.weibo.com/share/share.php?url=%s&title=%s" $shareUrl $shareTitle))
+    | append (dict "id" "copy" "labelKey" "shareCopyLink" "kind" "button")
+  -}}
+{{- else -}}
+  {{- $platforms = $platforms
+    | append (dict "id" "x" "labelKey" "shareX" "href" (printf "https://twitter.com/intent/tweet?text=%s&url=%s" $shareTitle $shareUrl))
+    | append (dict "id" "linkedin" "labelKey" "shareLinkedIn" "href" (printf "https://www.linkedin.com/shareArticle?mini=true&url=%s&title=%s" $shareUrl $shareTitle))
+    | append (dict "id" "facebook" "labelKey" "shareFacebook" "href" (printf "https://www.facebook.com/sharer/sharer.php?u=%s" $shareUrl))
+    | append (dict "id" "reddit" "labelKey" "shareReddit" "href" (printf "https://www.reddit.com/submit?url=%s&title=%s" $shareUrl $shareTitle))
+    | append (dict "id" "telegram" "labelKey" "shareTelegram" "href" (printf "https://t.me/share/url?url=%s&text=%s" $shareUrl $shareTitle))
+    | append (dict "id" "copy" "labelKey" "shareCopyLink" "kind" "button")
+  -}}
+{{- end -}}
+
+<div class="border-top pt-4 mt-4 share-block" data-share-root data-share-url="{{ $page.Permalink }}" data-share-title="{{ $page.Title }}" data-share-copy-success="{{ i18n "shareCopySuccess" | default "Link copied." }}" data-share-copy-failure="{{ i18n "shareCopyFailure" | default "Copy failed. Please copy the link manually." }}">
+  <style>
+    .share-block .share-actions {
+      gap: 0.5rem;
+    }
+
+    .share-block .share-button {
+      align-items: center;
+      background: var(--color-btn-bg, #f6f8fa);
+      border: 1px solid var(--color-border-default, #d0d7de);
+      border-radius: 999px;
+      color: var(--color-fg-default, #1f2328);
+      display: inline-flex;
+      gap: 0.35rem;
+      justify-content: center;
+      padding: 0.45rem 0.85rem;
+      transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .share-block .share-button:hover,
+    .share-block .share-button:focus-visible {
+      background: var(--color-canvas-subtle, #f6f8fa);
+      border-color: var(--color-accent-emphasis, #0969da);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent-emphasis, #0969da) 14%, transparent);
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .share-block .share-button:focus-visible {
+      outline: none;
+    }
+
+    .share-block .share-icon {
+      display: inline-flex;
+      flex: 0 0 auto;
+    }
+
+    .share-block .share-icon-badge {
+      align-items: center;
+      background: var(--color-neutral-subtle, rgba(175, 184, 193, 0.2));
+      border: 1px solid color-mix(in srgb, var(--color-border-default, #d0d7de) 75%, transparent);
+      border-radius: 0.55rem;
+      color: var(--color-fg-muted, #57606a);
+      display: inline-flex;
+      height: 1.65rem;
+      justify-content: center;
+      min-width: 1.65rem;
+      overflow: visible;
+      padding: 0.1rem;
+    }
+
+    .share-block .share-icon svg {
+      display: block;
+      fill: currentColor;
+      height: 1rem;
+      width: 1rem;
+    }
+
+    .share-block .share-icon--weibo svg {
+      height: 1.12rem;
+      width: 1.12rem;
+    }
+
+    .share-block .share-icon--linkedin svg {
+      height: 0.92rem;
+      width: 0.92rem;
+    }
+
+    .share-block .share-icon--telegram svg {
+      height: 0.88rem;
+      transform: translateX(-0.02rem);
+      width: 0.88rem;
+    }
+
+    .share-block .share-button:hover .share-icon-badge,
+    .share-block .share-button:focus-visible .share-icon-badge {
+      background: color-mix(in srgb, var(--color-accent-subtle, rgba(9, 105, 218, 0.1)) 88%, white);
+      color: var(--color-accent-fg, #0969da);
+    }
+
+    .share-block .share-button span:last-child {
+      font-weight: 500;
+    }
+
+    .share-block .share-panel {
+      background: var(--color-canvas-subtle, #f6f8fa);
+      border: 1px solid var(--color-border-default, #d0d7de);
+      border-radius: 0.5rem;
+      margin-top: 0.75rem;
+      max-width: 26rem;
+      padding: 1rem;
+    }
+
+    .share-block .share-panel[hidden] {
+      display: none;
+    }
+
+    .share-block .share-panel-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .share-block .share-panel-text {
+      color: var(--color-fg-muted, #57606a);
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .share-block .share-qr-frame {
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--color-border-default, #d0d7de);
+      border-radius: 0.5rem;
+      display: inline-flex;
+      justify-content: center;
+      min-height: 180px;
+      min-width: 180px;
+      padding: 0.75rem;
+    }
+
+    .share-block .share-qr-image {
+      display: block;
+      height: 180px;
+      width: 180px;
+    }
+
+    .share-block .share-feedback {
+      color: var(--color-fg-muted, #57606a);
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+      min-height: 1.25rem;
+    }
+
+    @media (max-width: 543px) {
+      .share-block .share-actions .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .share-block .share-button {
+        width: 100%;
+      }
+
+      .share-block .share-panel {
+        max-width: none;
+      }
+    }
+  </style>
+
+  <p class="f5 text-bold mb-2">{{ i18n "share" | default "Share" }}</p>
+  <div class="d-flex flex-wrap share-actions">
+    {{- range $platforms -}}
+      {{- $label := i18n .labelKey | default .id -}}
+      {{- if eq .kind "button" -}}
+      <button type="button" class="btn btn-sm share-button" data-share-action="{{ .id }}"{{ if eq .id "wechat" }} aria-controls="share-panel-{{ .id }}" aria-expanded="false"{{ end }}>
+        {{- partial "share-icon.html" .id -}}
+        <span>{{ $label }}</span>
+      </button>
+      {{- else -}}
+      <a href="{{ .href }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm share-button">
+        {{- partial "share-icon.html" .id -}}
+        <span>{{ $label }}</span>
+      </a>
+      {{- end -}}
+    {{- end -}}
+  </div>
+
+  {{- if $isCn -}}
+  <div id="share-panel-wechat" class="share-panel" data-share-panel="wechat" hidden>
+    <div class="share-panel-title">{{ i18n "shareWechat" | default "WeChat" }}</div>
+    <p class="share-panel-text">{{ i18n "shareWechatHint" | default "Scan the QR code in WeChat to share this article." }}</p>
+    <div class="share-qr-frame">
+      <img class="share-qr-image" data-share-qr alt="{{ i18n "shareWechatQrAlt" | default "QR code for this article" }}">
+    </div>
+  </div>
+  {{- end -}}
+
+  <p class="share-feedback" data-share-feedback aria-live="polite"></p>
+
+  <script>
+    (function () {
+      var root = document.currentScript && document.currentScript.parentElement;
+      if (!root || root.dataset.shareReady === 'true') {
+        return;
+      }
+      root.dataset.shareReady = 'true';
+
+      var shareUrl = root.getAttribute('data-share-url') || window.location.href;
+      var feedback = root.querySelector('[data-share-feedback]');
+      var qrImage = root.querySelector('[data-share-qr]');
+      var copySuccess = root.getAttribute('data-share-copy-success');
+      var copyFailure = root.getAttribute('data-share-copy-failure');
+      var wechatPanel = root.querySelector('[data-share-panel="wechat"]');
+      var feedbackTimer;
+
+      function setFeedback(message) {
+        if (!feedback) {
+          return;
+        }
+        feedback.textContent = message || '';
+        window.clearTimeout(feedbackTimer);
+        if (message) {
+          feedbackTimer = window.setTimeout(function () {
+            feedback.textContent = '';
+          }, 2400);
+        }
+      }
+
+      function closePanels(exceptName) {
+        var panels = root.querySelectorAll('[data-share-panel]');
+        panels.forEach(function (panel) {
+          if (panel.getAttribute('data-share-panel') !== exceptName) {
+            panel.hidden = true;
+          }
+        });
+      }
+
+      function ensureQrCode() {
+        if (!qrImage || qrImage.getAttribute('src')) {
+          return;
+        }
+        qrImage.setAttribute('src', 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent(shareUrl));
+      }
+
+      function copyLink() {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          return navigator.clipboard.writeText(shareUrl);
+        }
+
+        return new Promise(function (resolve, reject) {
+          var input = document.createElement('input');
+          input.type = 'text';
+          input.value = shareUrl;
+          input.setAttribute('readonly', 'readonly');
+          input.style.position = 'absolute';
+          input.style.left = '-9999px';
+          document.body.appendChild(input);
+          input.select();
+          input.setSelectionRange(0, input.value.length);
+          try {
+            if (!document.execCommand('copy')) {
+              throw new Error('copy failed');
+            }
+            resolve();
+          } catch (error) {
+            reject(error);
+          } finally {
+            document.body.removeChild(input);
+          }
+        });
+      }
+
+      root.querySelectorAll('[data-share-action]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var action = button.getAttribute('data-share-action');
+
+          if (action === 'copy') {
+            closePanels();
+            copyLink().then(function () {
+              setFeedback(copySuccess);
+            }).catch(function () {
+              setFeedback(copyFailure + ' ' + shareUrl);
+            });
+            return;
+          }
+
+          if (action === 'wechat' && wechatPanel) {
+            var willOpen = wechatPanel.hidden;
+            closePanels(willOpen ? 'wechat' : '');
+            if (willOpen) {
+              ensureQrCode();
+            }
+            wechatPanel.hidden = !willOpen;
+            button.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+          }
+        });
+      });
+    })();
+  </script>
+</div>
