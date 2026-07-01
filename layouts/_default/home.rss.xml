@@ -30,6 +30,8 @@
 {{- if ge $limit 1 }}
 	{{- $pages = $pages | first $limit }}
 {{- end }}
+{{- $rssLanguageCodes := site.Params.rssLanguageCodes | default dict }}
+{{- $rssLanguage := index $rssLanguageCodes site.Language.Lang | default site.Language.Lang }}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 	<channel>
@@ -57,7 +59,7 @@
         {{ end }}
 		<description>Recent content {{ if ne .Title .Site.Title }}{{ with .Title }}in {{ . }} {{ end }}{{ end }}on {{ .Site.Title }}</description>
 		<generator>Hugo</generator>
-		<language>{{ site.Language.Locale }}</language>
+		<language>{{ $rssLanguage }}</language>
 		{{ with $authorEmail }}
 			<managingEditor>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</managingEditor>
 		{{ end }}
