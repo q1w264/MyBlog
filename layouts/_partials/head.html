@@ -154,8 +154,7 @@
     --bgColor-accent-emphasis: {{ . }} !important;
     --bgColor-accent-muted: color-mix(in srgb, {{ . }} 15%, transparent) !important;
   }
-  html[data-color-mode="dark"],
-  html[data-dark-theme="dark"][data-color-mode="auto"] {
+  html[data-color-mode="dark"] {
     --fgColor-accent: color-mix(in srgb, {{ . }} 80%, #ffffff) !important;
     --bgColor-accent-emphasis: {{ . }} !important;
     --bgColor-accent-muted: color-mix(in srgb, {{ . }} 20%, transparent) !important;
@@ -175,8 +174,10 @@
   (function() {
     const saved = localStorage.getItem('theme');
     const html = document.documentElement;
-    if (saved === 'light' || saved === 'dark') {
-      html.setAttribute('data-color-mode', saved);
-    }
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const resolved = (saved === 'light' || saved === 'dark') ? saved : (prefersDark ? 'dark' : 'light');
+    html.setAttribute('data-color-mode', resolved);
+    html.setAttribute('data-light-theme', resolved);
+    html.setAttribute('data-dark-theme', resolved);
   })();
 </script>

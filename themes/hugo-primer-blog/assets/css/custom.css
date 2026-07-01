@@ -432,53 +432,43 @@
   color: #cf222e;
 }
 
-html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-note .markdown-alert-title,
-html[data-dark-theme="dark"][data-color-mode="auto"] .markdown-body .markdown-alert.markdown-alert-note .markdown-alert-title {
+html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-note .markdown-alert-title {
   color: #2f81f7;
 }
 
-html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-note,
-html[data-dark-theme="dark"][data-color-mode="auto"] .markdown-body .markdown-alert.markdown-alert-note {
+html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-note {
   border-left-color: #2f81f7;
 }
 
-html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-tip .markdown-alert-title,
-html[data-dark-theme="dark"][data-color-mode="auto"] .markdown-body .markdown-alert.markdown-alert-tip .markdown-alert-title {
+html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-tip .markdown-alert-title {
   color: #3fb950;
 }
 
-html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-tip,
-html[data-dark-theme="dark"][data-color-mode="auto"] .markdown-body .markdown-alert.markdown-alert-tip {
+html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-tip {
   border-left-color: #3fb950;
 }
 
-html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-important .markdown-alert-title,
-html[data-dark-theme="dark"][data-color-mode="auto"] .markdown-body .markdown-alert.markdown-alert-important .markdown-alert-title {
+html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-important .markdown-alert-title {
   color: #a371f7;
 }
 
-html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-important,
-html[data-dark-theme="dark"][data-color-mode="auto"] .markdown-body .markdown-alert.markdown-alert-important {
+html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-important {
   border-left-color: #a371f7;
 }
 
-html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-warning .markdown-alert-title,
-html[data-dark-theme="dark"][data-color-mode="auto"] .markdown-body .markdown-alert.markdown-alert-warning .markdown-alert-title {
+html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-warning .markdown-alert-title {
   color: #d29922;
 }
 
-html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-warning,
-html[data-dark-theme="dark"][data-color-mode="auto"] .markdown-body .markdown-alert.markdown-alert-warning {
+html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-warning {
   border-left-color: #d29922;
 }
 
-html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-caution .markdown-alert-title,
-html[data-dark-theme="dark"][data-color-mode="auto"] .markdown-body .markdown-alert.markdown-alert-caution .markdown-alert-title {
+html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-caution .markdown-alert-title {
   color: #f85149;
 }
 
-html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-caution,
-html[data-dark-theme="dark"][data-color-mode="auto"] .markdown-body .markdown-alert.markdown-alert-caution {
+html[data-color-mode="dark"] .markdown-body .markdown-alert.markdown-alert-caution {
   border-left-color: #f85149;
 }
 
@@ -691,14 +681,12 @@ html[data-dark-theme="dark"][data-color-mode="auto"] .markdown-body .markdown-al
   text-decoration: none;
 }
 
-[data-color-mode="dark"] .topic-tag,
-[data-dark-theme="dark"][data-color-mode="auto"] .topic-tag {
+[data-color-mode="dark"] .topic-tag {
   color: var(--fgColor-accent, #58a6ff);
   background-color: var(--bgColor-accent-muted, rgba(56, 139, 253, 0.15));
 }
 
-[data-color-mode="dark"] .topic-tag:hover,
-[data-dark-theme="dark"][data-color-mode="auto"] .topic-tag:hover {
+[data-color-mode="dark"] .topic-tag:hover {
   color: var(--fgColor-onEmphasis, #ffffff);
   background-color: var(--bgColor-accent-emphasis, #1f6feb);
 }
