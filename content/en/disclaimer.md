@@ -41,3 +41,9 @@ The content on this website is primarily for technical exchange and knowledge sh
 The establishment, performance, and interpretation of this Disclaimer and Copyright Statement shall be governed by the laws of Mainland China.
 
 本免责声明与版权声明的订立、执行与解释适用中国大陆法律。
+
+## 6. Third-Party Components and Open-Source License Notice
+
+This website uses the third-party open-source theme `hugo-primer-blog` (https://github.com/ngs/hugo-primer-blog). The theme is distributed under the MIT License, and the relevant copyright belongs to its original author. This website follows the applicable license terms for use of the theme and its derivative resources and retains required copyright and license notices where applicable.
+
+本网站使用第三方开源主题 `hugo-primer-blog`（https://github.com/ngs/hugo-primer-blog）。该主题基于 MIT License 发布，相关版权归原作者所有。对于该主题及其衍生资源的使用，本网站遵循其许可证条款，并在适用范围内保留必要的版权与许可声明。
