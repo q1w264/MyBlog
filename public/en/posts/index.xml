@@ -1,11 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on q1w264's Blog</title><link>https://www.q1w264.com/en/posts/</link><description>Recent content in Posts on q1w264's Blog</description><generator>Hugo</generator><language>en</language><copyright>© 2026 q1w264</copyright><lastBuildDate>Sat, 27 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://www.q1w264.com/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Getting Started with Hugo</title><link>https://www.q1w264.com/en/posts/getting-started-with-hugo/</link><pubDate>Sat, 27 Jun 2026 00:00:00 +0000</pubDate><guid>https://www.q1w264.com/en/posts/getting-started-with-hugo/</guid><description>&lt;p&gt;Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.&lt;/p&gt;
-&lt;h2 id="installation"&gt;Installation&lt;/h2&gt;
-&lt;p&gt;Installing Hugo is straightforward. On macOS, you can use Homebrew:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;brew install hugo&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;On Windows, you can use Chocolatey:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;choco install hugo-extended&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="creating-a-new-site"&gt;Creating a New Site&lt;/h2&gt;
-&lt;p&gt;Once Hugo is installed, creating a new site is simple:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo new site my-blog
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; my-blog&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="adding-content"&gt;Adding Content&lt;/h2&gt;
-&lt;p&gt;Create your first post:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo new posts/my-first-post.md&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="running-the-development-server"&gt;Running the Development Server&lt;/h2&gt;
-&lt;p&gt;Start the development server with:&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on q1w264&#39;s Blog</title>
+		<link>http://localhost:1313/en/posts/</link>
+		<description>Recent content in Posts on q1w264&#39;s Blog</description>
+		<generator>Hugo</generator>
+		<language>en</language>
+		
+		
+		
+			<copyright>© 2026 q1w264</copyright>
+		
+		
+			<lastBuildDate>Sat, 27 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/en/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Getting Started with Hugo</title>
+				<link>http://localhost:1313/en/posts/getting-started-with-hugo/</link>
+				<pubDate>Sat, 27 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/en/posts/getting-started-with-hugo/</guid>
+				<description>&lt;p&gt;Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.&lt;/p&gt;&#xA;&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;&#xA;&lt;p&gt;Installing Hugo is straightforward. On macOS, you can use Homebrew:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brew install hugo&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;On Windows, you can use Chocolatey:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;choco install hugo-extended&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;creating-a-new-site&#34;&gt;Creating a New Site&lt;/h2&gt;&#xA;&lt;p&gt;Once Hugo is installed, creating a new site is simple:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo new site my-blog&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; my-blog&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;adding-content&#34;&gt;Adding Content&lt;/h2&gt;&#xA;&lt;p&gt;Create your first post:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo new posts/my-first-post.md&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;running-the-development-server&#34;&gt;Running the Development Server&lt;/h2&gt;&#xA;&lt;p&gt;Start the development server with:&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

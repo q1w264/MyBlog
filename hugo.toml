@@ -6,6 +6,7 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
 [params]
+author = "q1w264"
 aboutName = "Shilong Yuan"
 email = "shilong.yuan@q1w264.com"
 dateFormat = "2006-01-02" 
@@ -86,6 +87,8 @@ contentDir = "content/en"
 label = "English"
 title = "q1w264's Blog"
 weight = 1
+[languages.en.params]
+copyrightLinks = '[Privacy Policy](/en/privacy/) · [Disclaimer](/en/disclaimer/)'
 
 
 [languages.cn]
@@ -93,6 +96,8 @@ contentDir = "content/cn"
 label = "简体中文"
 title = "q1w264的博客"
 weight = 2
+[languages.cn.params]
+copyrightLinks = '[隐私政策](/cn/privacy/) · [免责声明](/cn/disclaimer/)'
 
 [menus]
 # [[languages.en.menus.main]]
