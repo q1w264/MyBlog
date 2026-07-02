@@ -1,4 +1,5 @@
-{{- $profilePosts := where .Site.RegularPages "Section" "posts" -}}
+{{- $allProfilePosts := where .Site.RegularPages "Section" "posts" -}}
+{{- $profilePosts := where $allProfilePosts "Params.contentType" "ne" "repost" -}}
 {{- $postCount := len $profilePosts -}}
 {{- $tagCount := len .Site.Taxonomies.tags -}}
 {{- $wordCount := 0 -}}

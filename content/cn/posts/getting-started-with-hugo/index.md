@@ -8,6 +8,9 @@ categories: ["tutorial"]
 author: "Hugo"
 description: "了解如何开始使用 Hugo —— 世界上最快的静态网站生成器。"
 image: "hugo-logo.png"
+contentType: repost
+sourceTitle: "Getting Started with Hugo"
+sourceUrl: "https://hugo-primer-blog-demo.ngs.io/posts/getting-started-with-hugo/"
 ---
 
 Hugo 是最受欢迎的开源静态网站生成器之一。凭借其惊人的速度和灵活性，Hugo 让构建网站再次变得充满乐趣。

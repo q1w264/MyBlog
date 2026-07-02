@@ -122,6 +122,10 @@
 {{- $footerCss := resources.Get "css/footer.css" | minify | fingerprint -}}
 <link rel="stylesheet" href="{{ $footerCss.RelPermalink }}" integrity="{{ $footerCss.Data.Integrity }}">
 
+<!-- Post Notice CSS -->
+{{- $postNoticeCss := resources.Get "css/post-notice.css" | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $postNoticeCss.RelPermalink }}" integrity="{{ $postNoticeCss.Data.Integrity }}">
+
 <!-- Syntax Highlighting CSS -->
 {{- $syntaxCss := resources.Get "css/syntax.css" | minify | fingerprint -}}
 <link rel="stylesheet" href="{{ $syntaxCss.RelPermalink }}" integrity="{{ $syntaxCss.Data.Integrity }}">

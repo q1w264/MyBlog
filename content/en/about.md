@@ -20,31 +20,23 @@ build:
 location: "China"
 website: "https://www.q1w264.com"
 joined: 2024-01-01
-bio: "I build pages, workflows, and writing systems that stay readable and useful over time."
+Bio: Student | GitHub Developer with Zero Stars ⭐
+
 ---
+
 ## About Me
 
-I turn ideas into pages, workflows, and content that can stay readable over time.
-This blog is where I write about Hugo, Markdown, frontend templates, and practical engineering notes.
+- Currently operating as a Junior Partner in a full-time knowledge ecosystem, I am deeply institutionalized within a leading campus platform, consolidating multidimensional methodologies for general knowledge.
 
-## What I Work On
+## Areas of Expertise
 
-- Building lighter and clearer site structure with Hugo and Go templates.
-- Writing content with less noise and more signal.
-- Keeping the Chinese and English versions aligned.
+- High-frequency undertaker of basic living infrastructure, deeply establishing sleep management methodologies, and long-term committed to the boundaryless exploration of Human-Computer Interaction (HCI) and digital ecosystems.
 
-## What I Care About
+## Tech Stack
 
-- Simple but durable layouts.
-- Clear documentation and content structure.
-- Templates and components that are predictable to use.
+`C/C++` · `Markdown` · `Java` · `C#` · `Swift` · `Git` · `Unity Engine`
 
-## Toolbox
+## Current Status
 
-`Hugo` · `Markdown` · `Go templates` · `HTML/CSS` · `JavaScript` · `Git`
-
-## Now
-
-- Refactoring how this blog presents itself.
-- Curating a set of notes that are easy to reuse.
-- Making the page feel better on both desktop and mobile.
+- Undergoing deep incubation within a leading full-time K12 educational platform.
+- Leveraging high-frequency baseline infrastructure inputs and a full-cycle human body restoration matrix, I am long-term dedicated to the boundaryless exploration of multimedia terminals and digital ecosystems.

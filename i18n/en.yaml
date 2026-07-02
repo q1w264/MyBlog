@@ -98,3 +98,13 @@ allRightsReserved: "All rights reserved"
 
 # Comments
 comments: "Comments"
+
+# Post Rights
+originalLabel: "Original"
+repostLabel: "Repost"
+repostNoticeTitle: "Repost Notice"
+repostSourceLabel: "Source"
+missingSourceWarning: "This repost is missing sourceUrl in front matter."
+copyrightNoticeTitle: "Copyright Notice"
+licenseByText: "by"
+licensedUnderText: "is licensed under"

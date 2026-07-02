@@ -8,6 +8,9 @@ categories: ["documentation"]
 author: "Demo Author"
 description: "A comprehensive demonstration of GitHub Flavored Markdown features and syntax highlighting."
 image: "featured.jpg"
+contentType: repost
+sourceTitle: "GitHub Flavored Markdown Spec"
+sourceUrl: "https://github.github.com/gfm/"
 ---
 
 This post demonstrates all GitHub Flavored Markdown (GFM) features and code syntax highlighting supported by this theme.

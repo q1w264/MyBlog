@@ -20,31 +20,21 @@ build:
 location: "中国"
 website: "https://www.q1w264.com"
 joined: 2024-01-01
-bio: "我搭建页面、流程和写作系统，让内容长期保持清晰、可复用。"
+bio: "学生｜Github零星个人开发者⭐"
 ---
-## About Me
+## 关于我
 
-I turn ideas into pages, workflows, and content that can stay readable over time.
-This blog is where I write about Hugo, Markdown, frontend templates, and practical engineering notes.
+- 现阶段作为全日制知识生态圈的初级合伙人，正依托校园头部平台，深度沉淀多维度的通识方法论。
 
-## What I Work On
+## 我擅长什么
 
-- Building lighter and clearer site structure with Hugo and Go templates.
-- Writing content with less noise and more signal.
-- Keeping the Chinese and English versions aligned.
+- 擅长高频次承接生活基础基建，深度沉淀睡眠管理方法论，并长期致力于人机交互及数字生态的无边界探索。
 
-## What I Care About
+## 技能树
 
-- Simple but durable layouts.
-- Clear documentation and content structure.
-- Templates and components that are predictable to use.
+`C/C++` · `Markdown` · `Java` · `C#` · `Swift` · `Git` · `Unity Engine`
 
-## Toolbox
+## 现在
 
-`Hugo` · `Markdown` · `Go templates` · `HTML/CSS` · `JavaScript` · `Git`
-
-## Now
-
-- Refactoring how this blog presents itself.
-- Curating a set of notes that are easy to reuse.
-- Making the page feel better on both desktop and mobile.
+- 在K12全日制教育头部平台进行深度孵化。
+- 依托高频次基础基建输入与人体全周期修复矩阵，长期致力于多媒体终端与数字生态的无边界探索。

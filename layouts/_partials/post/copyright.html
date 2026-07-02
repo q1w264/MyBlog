@@ -1,0 +1,52 @@
+{{- $p := .page -}}
+{{- $position := .position | default "end" -}}
+{{- $contentType := lower ($p.Params.contentType | default "original") -}}
+{{- $isRepost := eq $contentType "repost" -}}
+
+{{- if and $isRepost (eq $position "end") -}}
+<div class="post-notice post-notice-subtle post-notice-repost mt-4 f6">
+  {{- with $p.Params.sourceUrl -}}
+  <p class="mb-0">
+    <strong>{{ i18n "repostSourceLabel" | default "Source" }}:</strong>
+    <a href="{{ . }}" target="_blank" rel="noopener noreferrer">
+      {{- $p.Params.sourceTitle | default . -}}
+    </a>
+  </p>
+  {{- else -}}
+  <p class="mb-0 color-fg-muted">
+    {{ i18n "missingSourceWarning" | default "This repost is missing sourceUrl in front matter." }}
+  </p>
+  {{- end -}}
+</div>
+{{- end -}}
+
+{{- if and (not $isRepost) (eq $position "end") -}}
+{{- $licenseName := $p.Params.licenseName | default "CC BY-NC 4.0" -}}
+{{- $licenseUrl := $p.Params.licenseUrl | default "https://creativecommons.org/licenses/by-nc/4.0/" -}}
+{{- $copyrightTitle := $p.Params.copyrightTitle | default $p.Title -}}
+{{- $copyrightTitleUrl := $p.Params.copyrightTitleUrl | default $p.Permalink -}}
+{{- $copyrightYear := $p.Params.copyrightYear -}}
+{{- if not $copyrightYear -}}
+  {{- if not $p.Date.IsZero -}}
+    {{- $copyrightYear = $p.Date.Format "2006" -}}
+  {{- else -}}
+    {{- $copyrightYear = now.Format "2006" -}}
+  {{- end -}}
+{{- end -}}
+{{- $authorName := $p.Params.licenseAuthor | default site.Params.author | default "q1w264" -}}
+{{- $authorUrl := $p.Params.licenseAuthorUrl | default ("/about/" | relLangURL) -}}
+<div class="post-notice post-notice-subtle post-notice-original mt-4 f6">
+  <p class="mb-0">
+    <a href="{{ $copyrightTitleUrl }}">{{ $copyrightTitle }}</a>
+    &copy;
+    {{ $copyrightYear }}
+    {{ i18n "licenseByText" | default "by" }}
+    <a href="{{ $authorUrl }}">{{ $authorName }}</a>
+    {{ i18n "licensedUnderText" | default "is licensed under" }}
+    <a href="{{ $licenseUrl }}" target="_blank" rel="noopener noreferrer">{{ $licenseName }}</a>
+    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" class="cc-license-icon">
+    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" class="cc-license-icon">
+    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" class="cc-license-icon">
+  </p>
+</div>
+{{- end -}}

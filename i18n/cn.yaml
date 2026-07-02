@@ -97,3 +97,13 @@ allRightsReserved: "版权所有"
 
 # Comments
 comments: "评论"
+
+# Post Rights
+originalLabel: "原创"
+repostLabel: "转载"
+repostNoticeTitle: "转载声明"
+repostSourceLabel: "原文来源"
+missingSourceWarning: "该转载文章缺少 sourceUrl，请在 front matter 中补充来源链接。"
+copyrightNoticeTitle: "版权声明"
+licenseByText: "by"
+licensedUnderText: "is licensed under"

@@ -1,0 +1,35 @@
+{{- $page := .page -}}
+{{- $variant := .variant | default "compact" -}}
+{{- $contentType := lower ($page.Params.contentType | default "original") -}}
+{{- $isRepost := eq $contentType "repost" -}}
+{{- $badgeClass := printf "post-type-badge post-type-badge-solid %s %s" (cond (eq $variant "hero") "post-type-badge-hero" "") (cond $isRepost "post-type-badge-repost" "post-type-badge-original") -}}
+{{- if and $isRepost $page.Params.sourceUrl -}}
+<a href="{{ $page.Params.sourceUrl }}" target="_blank" rel="noopener noreferrer" class="post-type-badge-link" aria-label="{{ i18n "repostSourceLabel" | default "Source" }}">
+  <span class="{{ $badgeClass }}">
+  {{- if eq $variant "hero" -}}
+  <svg class="post-type-badge-icon" viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M3.25 2.75a.75.75 0 0 1 .75.75v5.69l1.72-1.72a.75.75 0 1 1 1.06 1.06L3.78 11.56a.75.75 0 0 1-1.06 0L-.28 8.53a.75.75 0 0 1 1.06-1.06L2.5 9.19V3.5a.75.75 0 0 1 .75-.75Zm9.5 10.5a.75.75 0 0 1-.75-.75V6.81l-1.72 1.72a.75.75 0 1 1-1.06-1.06l3.03-3.03a.75.75 0 0 1 1.06 0l3.03 3.03a.75.75 0 1 1-1.06 1.06L13.5 6.81v5.69a.75.75 0 0 1-.75.75Z" fill="currentColor"/>
+  </svg>
+  {{- end -}}
+  <span>{{ i18n "repostLabel" | default "Repost" }}</span>
+  </span>
+</a>
+{{- else -}}
+<span class="{{ $badgeClass }}">
+  {{- if $isRepost -}}
+  {{- if eq $variant "hero" -}}
+  <svg class="post-type-badge-icon" viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M3.25 2.75a.75.75 0 0 1 .75.75v5.69l1.72-1.72a.75.75 0 1 1 1.06 1.06L3.78 11.56a.75.75 0 0 1-1.06 0L-.28 8.53a.75.75 0 0 1 1.06-1.06L2.5 9.19V3.5a.75.75 0 0 1 .75-.75Zm9.5 10.5a.75.75 0 0 1-.75-.75V6.81l-1.72 1.72a.75.75 0 1 1-1.06-1.06l3.03-3.03a.75.75 0 0 1 1.06 0l3.03 3.03a.75.75 0 1 1-1.06 1.06L13.5 6.81v5.69a.75.75 0 0 1-.75.75Z" fill="currentColor"/>
+  </svg>
+  {{- end -}}
+  <span>{{ i18n "repostLabel" | default "Repost" }}</span>
+  {{- else -}}
+  {{- if eq $variant "hero" -}}
+  <svg class="post-type-badge-icon" viewBox="0 0 16 16" aria-hidden="true">
+    <path d="M2 3.75A1.75 1.75 0 0 1 3.75 2h8.5A1.75 1.75 0 0 1 14 3.75v8.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25Zm1.5 0a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Zm1.75 2a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Zm0 2.5a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Zm0 2.5a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75Z" fill="currentColor"/>
+  </svg>
+  {{- end -}}
+  <span>{{ i18n "originalLabel" | default "Original" }}</span>
+  {{- end -}}
+</span>
+{{- end -}}

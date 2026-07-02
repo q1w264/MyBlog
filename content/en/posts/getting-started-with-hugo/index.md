@@ -8,6 +8,9 @@ categories: ["tutorial"]
 author: "Hugo"
 description: "Learn how to get started with Hugo, the world's fastest static site generator."
 image: "hugo-logo.png"
+contentType: repost
+sourceTitle: "Getting Started with Hugo"
+sourceUrl: "https://hugo-primer-blog-demo.ngs.io/posts/getting-started-with-hugo/"
 ---
 
 Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.

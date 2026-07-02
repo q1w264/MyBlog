@@ -1,4 +1,7 @@
 {{- define "main" -}}
+{{- $contentType := lower (.Params.contentType | default "original") -}}
+{{- $isRepost := eq $contentType "repost" -}}
+{{- $showRights := eq .Section "posts" -}}
 {{- if .Params.hideSidebar -}}
 <div class="Layout Layout--sidebarPosition-start Layout--flowRow-until-md">
   {{- partial "about/profile-sidebar.html" . -}}
@@ -6,6 +9,10 @@
     <div class="markdown-body">
       {{ .Content }}
     </div>
+
+    {{- if $showRights -}}
+    {{- partial "post/copyright.html" (dict "page" . "position" "end") -}}
+    {{- end -}}
 
     {{- if and site.Params.showShareButtons (ne .Params.hideShareButtons true) -}}
     {{- partial "share.html" . -}}
@@ -59,7 +66,12 @@
 {{- else -}}
 <article>
   <header class="mb-4">
-    <h1 class="f1 lh-condensed mb-2">{{ .Title }}</h1>
+    <h1 class="f1 lh-condensed mb-1">{{ .Title }}</h1>
+    {{- if $showRights -}}
+    <div class="post-type-badge-hero-wrap">
+      {{- partial "post/type-badge.html" (dict "page" . "variant" "hero") -}}
+    </div>
+    {{- end -}}
     {{- $hasDate := not .Date.IsZero -}}
     {{- $hasReadingTime := and site.Params.showReadingTime (ne .Params.hideReadingTime true) -}}
     {{- $hasAuthor := and site.Params.showAuthor .Params.author -}}
@@ -97,6 +109,10 @@
   <div class="markdown-body">
     {{ .Content }}
   </div>
+
+  {{- if $showRights -}}
+  {{- partial "post/copyright.html" (dict "page" . "position" "end") -}}
+  {{- end -}}
 
   {{- if and site.Params.showShareButtons (ne .Params.hideShareButtons true) -}}
   {{- partial "share.html" . -}}

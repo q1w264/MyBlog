@@ -23,9 +23,12 @@
       </div>
       {{- end -}}
       <div class="flex-auto">
-        <h2 class="f3 lh-condensed mb-1">
-          <a href="{{ .RelPermalink }}" class="Link--primary">{{ .Title }}</a>
-        </h2>
+        <div class="d-flex flex-items-center flex-wrap mb-1" style="gap: 0.4rem;">
+          <h2 class="f3 lh-condensed mb-0">
+            <a href="{{ .RelPermalink }}" class="Link--primary">{{ .Title }}</a>
+          </h2>
+          {{- partial "post/type-badge.html" (dict "page" . "variant" "compact") -}}
+        </div>
         {{- $hasDate := not .Date.IsZero -}}
         {{- $hasReadingTime := and site.Params.showReadingTime (ne .Params.hideReadingTime true) -}}
         {{- if or $hasDate $hasReadingTime -}}
